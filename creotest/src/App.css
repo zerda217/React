@@ -3,7 +3,9 @@
 }
 
 .App_header {
-  background-color: black;
+  background-color: white;
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 50px;
   display: flex;
@@ -11,12 +13,11 @@
   text-align: right;
   justify-content: center;
   font-size: 10px;
-  color: white;
+  color: gray;
 }
 
 .headerlogo {
   padding: 5px;
-  background-color: white;
   width: 80px;
 }
 
@@ -24,32 +25,38 @@
   height: clac(100vh - 300px) ;
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: center;
   justify-content: center;
   font-size: 10px;
-  color: white;
+  color: black;
 }
 
 .Footer {
+  background-color: black;
   display: flex;
   flex-direction: column;
   text-align: left;
   justify-content: center;
   position: fixed;
   bottom: 0;
+  height: 300px;
   width: 100%;
   font-size: 10px;
   color: white;
 
+  align-items: top center;
+
 }
 
-.FooterTop {
+.FooterUp {
   height: 150px;
-  background-color: rgb(75, 75, 75);
 }
 
-.FooterUnder {
-  height: 150px;
-  background-color: black;
+.FooterDown {
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(31, 31, 31);
   justify-content: bottom;
 }

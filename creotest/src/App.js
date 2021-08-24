@@ -1,17 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import Header from './components/Header';
+import { Link, Route } from 'react-router-dom';
 import PageTemplate from './components/PageTemplate';
 import Footer from './components/Footer';
+import Contact from './components/Contact';
 
 function App() {
   return (
     <div>
-      <Header></Header>
+      <div className="App_header">
+            <img className="headerlogo" src="https://blog.creokorea.com//uploads/l_f77a7d016b.png" alt="logo"/>
+            <div className="nav">
+              <Link to="/">ABOUT</Link>
+              CREO
+              WORKS
+              CAREERS
+              <Link to="/">CONTACT</Link>
+            </div>
+            <hr/>
+            {/* <Route path="/" exact={true} component={App} /> */}
+            {/* <Route path="/components/Contact" component={Contact} /> */}
+            </div>
       <div className="Body">
         <PageTemplate></PageTemplate>
       </div>
-    <Footer></Footer>
+    <Footer/>
     </div>
 
 //         <div>
