@@ -15,14 +15,14 @@ function App() {
               CREO
               WORKS
               CAREERS
-              <Link to="/">CONTACT</Link>
+              <Link to="/components/Contact">CONTACT</Link>
             </div>
-            <hr/>
-            {/* <Route path="/" exact={true} component={App} /> */}
-            {/* <Route path="/components/Contact" component={Contact} /> */}
             </div>
       <div className="Body">
         <PageTemplate></PageTemplate>
+        <hr/>
+            <Route path="/" exact={true} component={App} />
+            <Route path="/components/Contact" component={Contact} />
       </div>
     <Footer/>
     </div>
@@ -46,7 +46,7 @@ function App() {
         //         <div>대표메일 : hb.kim@creokorea.com</div>
         //         <div></div>
         //     </div>
-        //     <div>© CREO KOREA all right reseved</div>
+        //     
   );
 }
 

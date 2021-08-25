@@ -23,6 +23,7 @@
 
 .Body {
   height: clac(100vh - 300px) ;
+  background-color: yellowgreen;
   display: flex;
   flex-direction: column;
   text-align: center;

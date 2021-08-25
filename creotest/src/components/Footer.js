@@ -14,6 +14,7 @@ export default class Footer extends Component {
                 <div className="FooterDown">
                     로고2
                 </div>
+                {/* <div>© CREO KOREA all right reseved</div> */}
             </div>
         )
     }
