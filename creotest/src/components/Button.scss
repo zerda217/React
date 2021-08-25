@@ -25,3 +25,20 @@ $gray: #525252; // 주석 선언
     background: darken($gray, 10%); // 색상 10% 어둡게
   }
 }
+
+.Title {
+  display: inline-flex;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+  outline: 3px solid;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+
+  height: 2.25rem;
+  width: 10rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+}
