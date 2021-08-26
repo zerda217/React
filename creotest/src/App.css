@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  color: inherit;
+  text-decoration: none;
 }
 
 .App_header {
@@ -21,6 +23,17 @@
   width: 80px;
 }
 
+.nav {
+  background-color: rgb(255, 119, 65);
+  width: 50%;
+  position: fixed;
+  right: 50px;
+  font-size: 15px;
+  /* 링크 색, 밑줄 없애기 */
+  color: inherit;
+  text-decoration: none !important;
+}
+
 .Body {
   height: calc(100vh - 200px) ;
   background-color: #ffb340;
@@ -30,10 +43,6 @@
   justify-content: center;
   font-size: 10px;
   color: black;
-}
-
-.Contact {
-  background-color: hsl(204, 100%, 63%);
 }
 
 .Footer {
