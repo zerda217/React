@@ -25,7 +25,7 @@ function App() {
       <div className="Body">
         <About/>
         <hr/>
-            <Route path="/components/About" exact={true} component={About} />
+            <Route path="/components" exact={true} component={About} />
             <Route path="/components/Creo" component={Creo} />
             <Route path="/components/Works" component={Works} />
             <Route path="/components/Careers" component={Careers} />

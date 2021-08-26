@@ -6,7 +6,7 @@ export default class About extends Component {
         return (
             <div>
                 <h1>ABOUT</h1>
-                <PageTemplate/>
+
             </div>
         )
     }
