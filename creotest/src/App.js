@@ -23,9 +23,9 @@ function App() {
             </div>
             </div>
       <div className="Body">
-        <About/>
+        {/* <About/> */}
         <hr/>
-            <Route path="/components" exact={true} component={About} />
+            <Route path="/" exact={true} component={About} />
             <Route path="/components/Creo" component={Creo} />
             <Route path="/components/Works" component={Works} />
             <Route path="/components/Careers" component={Careers} />

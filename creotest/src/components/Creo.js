@@ -7,7 +7,7 @@ export default class Creo extends Component {
         return (
             <div>
                 <h1>CREO</h1>
-                <Table>첫번째</Table>
+                <Table>첫번째Table.js</Table>
                 <Table>두번째</Table>
                 <Table>세번째</Table>
             </div>
