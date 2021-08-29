@@ -1,15 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Button.scss';
 
-class Title extends Component {
-
-  static defaultProps = {
-    title: ''
-  }
-  
-  render() {
-  return <button className="Title">{this.props.title}</button>;
- }
+function Title(props) {
+  return (
+  <div>
+     <button className="Title">{props.name}</button>
+  </div>
+  );
 }
 
 export default Title;
