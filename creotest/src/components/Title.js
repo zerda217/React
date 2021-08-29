@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Button.scss';
 
-function Title() {
-  return <button className="Title">소제목</button>;
+class Title extends Component {
+
+  static defaultProps = {
+    title: ''
+  }
+  
+  render() {
+  return <button className="Title">{this.props.title}</button>;
+ }
 }
 
 export default Title;
