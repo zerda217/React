@@ -4,11 +4,10 @@ import Button from './Button';
 export default function Footer () {
         return (
             <div className="Footer">
-                <div className="FotterUp">
+                <div className="FooterUp">
                     Contact us with
                     your challenge
-                    <h1>버튼 위치</h1>
-                    <Button></Button>
+                    <div><Button onClick></Button></div>
                 </div>
                 <div className="FooterDown">
                     로고2

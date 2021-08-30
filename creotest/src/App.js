@@ -11,11 +11,11 @@ function App() {
       <div className="App_header">
             <img className="headerlogo" src="https://blog.creokorea.com//uploads/l_f77a7d016b.png" alt="logo"/>
             <div className="nav">             
-                <Link className="text-link" to="/components/About">ABOUT</Link>
-                <Link className="text-link" to="/components/Creo">CREO</Link>
-                <Link className="text-link" to="/components/Works">WORKS</Link>
-                <Link className="text-link" to="/components/Careers">CAREERS</Link>
-                <Link className="text-link" to="/components/Contact">CONTACT</Link>             
+                <Link to="/components/About">ABOUT</Link>
+                <Link to="/components/Creo">CREO</Link>
+                <Link to="/components/Works">WORKS</Link>
+                <Link to="/components/Careers">CAREERS</Link>
+                <Link to="/components/Contact">CONTACT</Link>             
             </div>
             </div>
       <div className="Main">

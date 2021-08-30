@@ -1,4 +1,4 @@
-$gray: #525252; // 주석 선언
+// $gray: #525252; // 주석 선언
 
 .Button {
   display: inline-flex;
@@ -16,13 +16,13 @@ $gray: #525252; // 주석 선언
   padding-right: 1rem;
   font-size: 1rem;
 
-  background: $gray; // 주석 사용
+  background: gray; // 주석 사용
   &:hover {
-    background: lighten($gray, 10%); // 색상 10% 밝게
+    background: lighten(gray, 10%); // 색상 10% 밝게
   }
 
   &:active {
-    background: darken($gray, 10%); // 색상 10% 어둡게
+    background: darken(gray, 10%); // 색상 10% 어둡게
   }
 }
 
@@ -30,8 +30,9 @@ $gray: #525252; // 주석 선언
   display: inline-flex;
   align-items: center;
   color: black;
-  font-weight: bold;
-  outline: 3px solid;
+  text-align: center;
+  // font-weight: bold;
+  outline: 1px solid;
   border-radius: 30px;
   border: none;
   cursor: pointer;
@@ -40,4 +41,23 @@ $gray: #525252; // 주석 선언
   width: 10rem;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.Outline {
+  color: white;
+  background-color: #ffffff00;
+  border: 1px solid white;
+  border-radius: 30px;
+  cursor: pointer;
+  
+  height: 3rem;
+  width: 15rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+//임시
+.imgbox {
+  height: 13rem;
+  background-color: #00002c;
 }
