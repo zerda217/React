@@ -24,19 +24,21 @@
 }
 
 .nav {
-  background-color: rgb(255, 119, 65);
   width: 50%;
   position: fixed;
   right: 50px;
   font-size: 15px;
-  /* 링크 색, 밑줄 없애기 */
+}
+
+.text-link {  
   color: inherit;
   text-decoration: none !important;
 }
 
-.Body {
+
+.Main {
+  min-height: 15px;
   height: calc(100vh - 200px) ;
-  background-color: #ffb340;
   display: flex;
   flex-direction: column;
   text-align: center;

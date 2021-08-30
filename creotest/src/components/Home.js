@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-// import PageTemplate from './PageTemplate'
 
-export default class About extends Component {
+export default class Home extends Component {
     render() {
         return (
             <div>
-                <h1>ABOUT</h1>
-
+                <h2>HOME</h2>
             </div>
         )
     }
