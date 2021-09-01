@@ -1,13 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import Button from './Button';
 
 export default function Footer () {
+
         return (
             <div className="Footer">
                 <div className="FooterUp">
                     Contact us with
                     your challenge
-                    <div><Button onClick></Button></div>
+                    <div>
+                        <Link to = "./Contact">
+                            <Button/>
+                        </Link>
+                    </div>
                 </div>
                 <div className="FooterDown">
                     로고2
