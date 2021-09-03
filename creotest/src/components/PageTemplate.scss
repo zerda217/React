@@ -1,3 +1,5 @@
+// @import './styles/utils.scss';
+
 .page-template {
     // margin-top: 5rem;
     margin-left: auto;
@@ -26,6 +28,19 @@
     }
 }
 
+.home {
+    background:#dbff99;
+    width: 1024px;
+    margin: 0 auto;
+    padding: 1rem;
+
+    @media(max-width: 768px) {
+        background: yellowgreen;
+        margin: 0 auto;
+        width: calc(100% - 2rem);
+    }
+}
+
 .item {
     margin-left: auto;
     margin-right: auto;
@@ -34,7 +49,6 @@
     align-items: center;
     padding: 0.5rem;
     display: flex;
-    align-items: center;
     cursor: pointer;
     .text {
         flex: 1;

@@ -4,7 +4,6 @@ import { Link, Route } from 'react-router-dom';
 import { Home, About, Creo, Works, Careers, Contact } from './components';
 import Footer from './components/Footer';
 
-
 function App() {
   return (
     <div>

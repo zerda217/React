@@ -1,0 +1,114 @@
+// $gray: #525252; // 주석 선언
+// @import 'utils';
+
+.Button {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  border-radius: 0px;
+  border: none;
+  cursor: pointer;
+
+  height: 2.25rem;
+  width: 10rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+
+  background: gray; // 주석 사용
+  &:hover {
+    background: lighten(gray, 10%); // 색상 10% 밝게
+  }
+
+  &:active {
+    background: darken(gray, 10%); // 색상 10% 어둡게
+  }
+}
+
+.Title {
+  display: inline-flex;
+  align-items: center;
+  color: black;
+  text-align: center;
+  // font-weight: bold;
+  outline: 1px solid;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+
+  height: 2.25rem;
+  width: 10rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.Outline {
+  color: white;
+  background-color: #ffffff00;
+  border: 1px solid white;
+  border-radius: 30px;
+  cursor: pointer;
+  
+  height: 3rem;
+  width: 15rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+//임시
+.imgbox {
+  height: 5rem;
+  background-color: #00002c;
+}
+
+.contact {
+  // background-color: #ffc2ff;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  border: 1px solid black;
+}
+
+.message {
+  border: 1px solid black;
+}
+
+.li1 {
+  // background-color: red;
+  text-align: left;
+  width: 200px;
+  height: 20px;
+  margin: 0.1rem;
+}
+.li2 {
+  // background-color: orange;
+  text-align: left;
+  width: 200px;
+  height: 20px;
+  margin: 0.1rem;
+}
+.li3 {
+  // background-color: yellow;
+  text-align: left;
+  width: 200px;
+  height: 20px;
+  margin: 0.1rem;
+}
+.li4 {
+  // background-color: green;
+  text-align: left;
+  width: 200px;
+  height: 20px;
+  margin: 0.1rem;
+}
+.li5 {
+  // background-color: blue;
+  text-align: left;
+  width: 400px;
+  height: 20px;
+  margin: 0.1rem;
+}

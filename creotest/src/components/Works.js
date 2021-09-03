@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import PageTemplate from './PageTemplate'
 import Table from './Table';
 import Title from './Title';
-import './Button.scss';
+import './Components.scss';
 
 export default class Works extends Component {
     state = {

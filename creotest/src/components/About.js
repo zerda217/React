@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+// import React from 'react'
+import './Components.scss';
 // import PageTemplate from './PageTemplate'
 
-export default class About extends Component {
-    render() {
-        return (
-            <div>
-                <h1>ABOUT</h1>
+const About = () => {
+    return (
+        <div>
+            <h1>ABOUT</h1>
+        </div>
+    );
+};
 
-            </div>
-        )
-    }
-}
+export default About;

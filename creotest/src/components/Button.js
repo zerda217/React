@@ -1,5 +1,5 @@
 import React from 'react';
-import './Button.scss';
+import './Components.scss';
 
 function Button() {
   return <button className="Button">CONTACT US</button>;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classNames/bind';
-import styles from './Button.scss';
+import styles from './Components.scss';
 
 const cx = classNames.bind(styles);
 
