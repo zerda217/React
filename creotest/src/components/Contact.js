@@ -26,33 +26,33 @@ export default class Contact extends Component {
                     <p>7, Yeonmujang 5ga-gil,</p> 
                     <p>Seongdong-gu, Seoul, Republic of Korea</p>
                 <h4>HOW CAN WE HELP YOU?</h4>
-                <ul>
+                <span className="form">
                     <div className="li">
-                        <div className="li1">Your Name </div>
-                        <div className="li1"><input className="box" type="text" alter="name"
-                            value={name} onChange={handleChange}/></div>
+                        <span className="li1">Your Name </span>
+                        <span className="li1"><input className="box" type="text" alter="name"
+                            value={name} onChange={handleChange}/></span>
                     </div>
                     <div className="li">
-                        <div className="li2">Phone </div>
-                        <div className="li2"><input className="box" type="text" alter="Phone"
-                        value={phone} onChange={handleChange}/></div>
+                        <span className="li1">Phone </span>
+                        <span className="li1"><input className="box" type="text" alter="Phone"
+                        value={phone} onChange={handleChange}/></span>
                     </div>
                     <div className="li">
-                        <div className="li3">E-mail</div>
-                        <div className="li3"><input className="box" type="text" alter="email"
-                        value={email} onChange={handleChange}/></div>
+                        <span className="li1">E-mail</span>
+                        <span className="li1"><input className="box" type="text" alter="email"
+                        value={email} onChange={handleChange}/></span>
                     </div>
                     <div className="li">
-                        <div className="li4">Organization</div>
-                        <div className="li4"><input className="box" type="text" alter="Organization"
-                        value={organization} onChange={handleChange}/></div>
+                        <span className="li1">Organization</span>
+                        <span className="li1"><input className="box" type="text" alter="Organization"
+                        value={organization} onChange={handleChange}/></span>
                     </div>
                     <div className="li">
-                        <div className="li5">Message </div>
-                        <div className="li5"><textarea className="text" type="box" alter="Message"
-                        value={message} onChange={handleChange}/></div>
+                        <span className="li5">Message </span>
+                        <span className="li5"><textarea className="text" type="box" alter="Message"
+                        value={message} onChange={handleChange}/></span>
                     </div>
-                </ul>
+                </span>
                 {/* <p>Your Name 
                     <input className="box" type="text" alter="name"
                         value={name} onChange={handleChange}/></p>

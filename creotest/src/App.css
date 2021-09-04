@@ -21,6 +21,7 @@
 .headerlogo {
   padding: 5px;
   width: 80px;
+  object-fit: contain;
 }
 
 .nav {
