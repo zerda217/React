@@ -26,31 +26,32 @@ export default class Contact extends Component {
                     <p>7, Yeonmujang 5ga-gil,</p> 
                     <p>Seongdong-gu, Seoul, Republic of Korea</p>
                 <h4>HOW CAN WE HELP YOU?</h4>
+
                 <span className="form">
                     <div className="li">
                         <span className="li1">Your Name </span>
-                        <span className="li1"><input className="box" type="text" alter="name"
-                            value={name} onChange={handleChange}/></span>
+                        <input className="box" type="text" alter="name"
+                            value={name} onChange={handleChange}/>
                     </div>
                     <div className="li">
                         <span className="li1">Phone </span>
-                        <span className="li1"><input className="box" type="text" alter="Phone"
-                        value={phone} onChange={handleChange}/></span>
+                        <input className="box" type="text" alter="Phone"
+                        value={phone} onChange={handleChange}/>
                     </div>
                     <div className="li">
                         <span className="li1">E-mail</span>
-                        <span className="li1"><input className="box" type="text" alter="email"
-                        value={email} onChange={handleChange}/></span>
+                       <input className="box" type="text" alter="email"
+                        value={email} onChange={handleChange}/>
                     </div>
                     <div className="li">
                         <span className="li1">Organization</span>
-                        <span className="li1"><input className="box" type="text" alter="Organization"
-                        value={organization} onChange={handleChange}/></span>
+                       <input className="box" type="text" alter="Organization"
+                        value={organization} onChange={handleChange}/>
                     </div>
                     <div className="li">
                         <span className="li5">Message </span>
-                        <span className="li5"><textarea className="text" type="box" alter="Message"
-                        value={message} onChange={handleChange}/></span>
+                       <textarea className="text" type="box" alter="Message"
+                        value={message} onChange={handleChange}/>
                     </div>
                 </span>
                 {/* <p>Your Name 
@@ -69,6 +70,7 @@ export default class Contact extends Component {
                     <textarea className="text" type="box" alter="Message"
                         value={message} onChange={handleChange}/></p> */}
                 <button type="submit" onClick={handleClick}>Submit</button>
+                <h2>배열 정리, handelChange 분리</h2>
             </div>
         )
     }
