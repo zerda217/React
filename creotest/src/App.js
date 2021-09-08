@@ -1,15 +1,28 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 import { Home, About, Creo, Works, Careers, Contact } from './components';
 import Footer from './components/Footer';
 
-export default class App extends Component {
+const useScroll = () => {
+  const [state, setState] = useState({
+    x: 0,
+    y: 0
+  });
+  const onScroll = () => {
+    setState({ y: window.scrollY, x: window.scrollX });
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll); 
+  }, []);
+  return state;
+};
 
-render () {
-
+const App = () => {
+  const { y } = useScroll();
   return (
-    <div>
+    <div  style={{ height:"1000vh" }}>
       <div className="App_header">
             <img className="headerlogo" src="https://blog.creokorea.com//uploads/l_f77a7d016b.png" alt="logo" 
               Link to="/components/About"/>
@@ -37,4 +50,5 @@ render () {
     </div>   
   );
 }
-}
+
+export default App;
