@@ -4,7 +4,7 @@
   text-decoration: none;
 }
 
-.App_header {
+/* .App_header {
   background-color: white;
   position: fixed;
   top: 0;
@@ -16,7 +16,7 @@
   justify-content: center;
   font-size: 10px;
   color: gray;
-}
+} */
 
 .headerlogo {
   padding: 5px;
@@ -56,7 +56,7 @@ a + a {
   color: black;
 }
 
-.Footer {
+/* .Footer {
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -71,21 +71,21 @@ a + a {
 
   align-items: top center;
 
-}
+} */
 
-.FooterUp {
+/* .FooterUp {
   height: 150px;
   left: 50px;
 
   position: fixed;
   left: 100px;
-}
+} */
 
-.FooterDown {
+/* .FooterDown {
   position: fixed;
   bottom: 0;
   height: 50px;
   width: 150%;
   background-color: rgb(31, 31, 31);
   justify-content: bottom;
-}
+} */
