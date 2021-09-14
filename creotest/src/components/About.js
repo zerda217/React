@@ -13,10 +13,15 @@ function About () {
             <div>
                 <h1>ABOUT</h1>
                 name:
-                <input type="text" value={name} 
-                onChange={({ target: {value}}) => setName(value)}/>
+                <input type="text" 
+                value={name} 
+                onChange={({ target: {value}}) => setName(value)
+                // onChange={(e) => setName(e.target.value)}
+                
+                }/>
                 phone: 
-                <input type="text" value={phone} 
+                <input type="text" 
+                value={phone} 
                 onChange={({ target: {value}}) => setPhone(value)}/>
                 <button onClick={onClick}>submit</button>
             </div>
