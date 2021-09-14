@@ -1,19 +1,13 @@
 import React from 'react';
-import classNames from 'classnames/bind';
 import styles from './PageTemplate.scss';
-import Title from './Title';
+import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
 const PageTemplate = ({children}) => {
-
     return (
     <div className={cx('page-template')}>
-        <h4>PageTemplate.js</h4>
-        <item>첫번째</item>
-        <item>첫번째</item>
-        <item>첫번째</item>
-        <Title/>
+        <h4>크레오 코리아</h4>
         <div className={cx('content')}>{children}</div>
     </div>
     );

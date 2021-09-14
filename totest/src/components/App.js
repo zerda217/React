@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PageTemplate from './PageTemplate';
 import TodoInput from './TodoInput';
 import TodoList from './TodoList';
+import Button from './Button';
 
 class App extends Component {
   state = {
@@ -74,10 +75,13 @@ class App extends Component {
     } = this;
 
     return (
+        <div>
         <PageTemplate>
           <TodoInput onChange={handleChange} onInsert={handleInsert} value={input}/>
           <TodoList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
         </PageTemplate>
+        <Button></Button>
+        </div>
     );
   };
 }

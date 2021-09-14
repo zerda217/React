@@ -1,0 +1,101 @@
+// $gray: #525252; // 주석 선언
+
+.Button {
+  display: inline-flex;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  outline: none;
+  border-radius: 0px;
+  border: none;
+  cursor: pointer;
+
+  height: 2.25rem;
+  width: 10rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+
+  background: gray; // 주석 사용
+  &:hover {
+    background: lighten(gray, 10%); // 색상 10% 밝게
+  }
+
+  &:active {
+    background: darken(gray, 10%); // 색상 10% 어둡게
+  }
+}
+
+// Title.js
+.Title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 30px;
+  cursor: pointer;
+
+  height: 2.25rem;
+  width: 15rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.Outline {
+  color: white;
+  background-color: #ffffff00;
+  border: 1px solid white;
+  border-radius: 30px;
+  cursor: pointer;
+  
+  height: 3rem;
+  width: 15rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+//임시
+.imgbox {
+  height: 5rem;
+  background-color: #00002c;
+}
+
+//Contact.js 
+.contact {
+  justify-content: center;
+  align-items: center;
+}
+.form{
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  height: 20px;
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.message {
+  border: 1px solid black;
+}
+
+.li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  width: 200px;
+  height: 50px;
+  margin: 1.5rem;
+  border: 1px solid red;
+  background: aqua;
+}
+.li5 {
+  text-align: left;
+  width: 400px;
+  height: 20px;
+  margin: 0.1rem;
+}

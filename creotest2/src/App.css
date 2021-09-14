@@ -1,16 +1,8 @@
 .App {
   text-align: center;
-  text-decoration: none;
 }
 
 .App_header {
-  background-color: white;
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-/* .App_header {
   background-color: white;
   position: fixed;
   top: 0;
@@ -22,52 +14,25 @@
   justify-content: center;
   font-size: 10px;
   color: gray;
-} */
+}
 
 .headerlogo {
-  border: 1px solid green;
   padding: 5px;
   width: 80px;
-  object-fit: contain;
 }
 
-.nav {
-  width: 50%;
-  position: fixed;
-  right: 50px;
-  font-size: 15px;
-}
-
-a {  
-  color: inherit;
-  text-decoration: inherit;
-}
-
-a + a {
-  margin: 0.3rem;
-}
-
-.Main {
-  border: 1px solid #ff9900;
-  text-align: center;
-}
-
-/* .Main {
-  border: 1px solid #ff9900;
-  position: fixed;
-  top: 50px;
-  min-height: 15px;
-  height: calc(100vh - 200px) ;
-  width: 100%;
+.Body {
+  height: clac(100vh - 300px) ;
+  background-color: yellowgreen;
   display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: top center;
+  justify-content: center;
   font-size: 10px;
   color: black;
-} */
+}
 
-/* .Footer {
+.Footer {
   background-color: black;
   display: flex;
   flex-direction: column;
@@ -75,22 +40,17 @@ a + a {
   justify-content: center;
   position: fixed;
   bottom: 0;
-  height: 200px;
+  height: 300px;
   width: 100%;
   font-size: 10px;
   color: white;
 
   align-items: top center;
 
-} */
+}
 
-/* .FooterUp {
-  position: fixed;
-  bottom: 50px;
-  height: 100px;
-  width: 100%;
-  background-color: black;
-  border: 1px solid blue;
+.FooterUp {
+  height: 150px;
 }
 
 .FooterDown {
@@ -100,4 +60,4 @@ a + a {
   width: 100%;
   background-color: rgb(31, 31, 31);
   justify-content: bottom;
-} */
+}
