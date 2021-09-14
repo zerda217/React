@@ -4,6 +4,7 @@
   text-decoration: none;
 }
 
+
 /* .App_header {
   background-color: white;
   position: fixed;
@@ -40,8 +41,12 @@ a + a {
   margin: 0.3rem;
 }
 
-
 .Main {
+  border: 1px solid #ff9900;
+  text-align: center;
+}
+
+/* .Main {
   border: 1px solid #ff9900;
   position: fixed;
   top: 50px;
@@ -54,7 +59,7 @@ a + a {
   justify-content: top center;
   font-size: 10px;
   color: black;
-}
+} */
 
 /* .Footer {
   background-color: black;
@@ -74,18 +79,19 @@ a + a {
 } */
 
 /* .FooterUp {
-  height: 150px;
-  left: 50px;
-
   position: fixed;
-  left: 100px;
-} */
+  bottom: 50px;
+  height: 100px;
+  width: 100%;
+  background-color: black;
+  border: 1px solid blue;
+}
 
-/* .FooterDown {
+.FooterDown {
   position: fixed;
   bottom: 0;
   height: 50px;
-  width: 150%;
+  width: 100%;
   background-color: rgb(31, 31, 31);
   justify-content: bottom;
 } */

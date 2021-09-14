@@ -1,12 +1,28 @@
-// import React from 'react'
-import './Components.scss';
+import React, { Component } from 'react'
 
-const About = () => {
-    return (
-        <div>
-            <h1>ABOUT</h1>
-        </div>
-    );
-};
+export default class About extends Component {
+    state = {name: ''}
 
-export default About;
+    handelChange = (e) => {
+        this.setState({ name:e.targer.value })
+    }
+
+    handleClick = () => {
+        const { name } = this.state;
+            alert( name )
+            this.setState( { name: '' })
+    }
+
+    render() {
+        const { name } = this.state;
+        const { handelChange, handleClick } = this;
+        return (
+            <div>
+                <h1>ABOUT</h1>
+                <input type="text" value={name} onChange={handelChange}/>
+
+            <button type="submit" onClick={ handleClick }>Submit</button>
+            </div>
+        )
+    }
+}
