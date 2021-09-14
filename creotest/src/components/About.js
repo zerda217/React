@@ -1,28 +1,26 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 
-export default class About extends Component {
-    state = {name: ''}
+function About () {
 
-    handelChange = (e) => {
-        this.setState({ name:e.targer.value })
+    const [ name, setName ] = useState("");
+    const [ phone, setPhone ] = useState("");
+
+    const onClick = () => {
+        alert( "name: " + name + "/ phone: " + phone )
     }
 
-    handleClick = () => {
-        const { name } = this.state;
-            alert( name )
-            this.setState( { name: '' })
-    }
-
-    render() {
-        const { name } = this.state;
-        const { handelChange, handleClick } = this;
         return (
             <div>
                 <h1>ABOUT</h1>
-                <input type="text" value={name} onChange={handelChange}/>
-
-            <button type="submit" onClick={ handleClick }>Submit</button>
+                name:
+                <input type="text" value={name} 
+                onChange={({ target: {value}}) => setName(value)}/>
+                phone: 
+                <input type="text" value={phone} 
+                onChange={({ target: {value}}) => setPhone(value)}/>
+                <button onClick={onClick}>submit</button>
             </div>
         )
     }
-}
+
+export default About;
