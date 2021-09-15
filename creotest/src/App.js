@@ -13,13 +13,13 @@ const App = () => {
       <div className="App_header">
         <Link to="/">
         <img className="headerlogo" src="https://blog.creokorea.com//uploads/l_f77a7d016b.png" alt="logo"/></Link>
-          <span className="nav">             
-            <Link to="/components/About">ABOUT</Link>
-            <Link to="/components/Creo">CREO</Link>
-            <Link to="/components/Works">WORKS</Link>
-            <Link to="/components/Careers">CAREERS</Link>
-            <Link to="/components/Contact2">CONTACT</Link>             
-          </span>
+          <ul className="nav">             
+            <li className="nav_li"><Link to="/components/About">ABOUT</Link></li>
+            <li className="nav_li"><Link to="/components/Creo">CREO</Link></li>
+            <li className="nav_li"><Link to="/components/Works">WORKS</Link></li>
+            <li className="nav_li"><Link to="/components/Careers">CAREERS</Link></li>
+            <li className="nav_li"><Link to="/components/Contact2">CONTACT</Link></li>         
+          </ul>
       </div>
         <div className="Main">
           <hr/>
@@ -45,20 +45,18 @@ const App = () => {
       </div>
       <div className="FooterDown">
         <img className="footerlogo" src="https://blog.creokorea.com//uploads/l_f77a7d016b.png" alt="logo"/>
-                    <div>
-                    <div>대표 : 김홍범 / 서울특별시 성동구 연무장 5가길 7</div>
-                    <div>TEL : 02-4321-432</div>
-                    <div>개인정보취급방침</div>
-                    <div>사업자등록번호 :</div>
-                    <div>대표메일 : hb.kim@creokorea.com</div>
-                    <div></div>
-                 </div>
-                    <div className="copyright">© CREO KOREA all right reseved</div>
-                </div>               
-            </div>
-            </div>
-            </div>
-    {/* <Footer/> */}
+          <span>
+              <li>대표 : 김홍범 / 서울특별시 성동구 연무장 5가길 7</li>
+              <li>TEL : 02-4321-432</li>
+              <li>개인정보취급방침</li>
+              <li>사업자등록번호 :</li>
+              <li>대표메일 : hb.kim@creokorea.com</li>          
+          </span>
+          <div className="copyright">© CREO KOREA all right reseved</div>
+        </div>               
+        </div>
+      </div>
+    </div>
   </div>   
   );
 }

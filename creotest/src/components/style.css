@@ -1,0 +1,13 @@
+.body {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: white
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*수직 중간*/
+    background-color: #263343;
+}
