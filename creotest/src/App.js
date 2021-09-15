@@ -8,8 +8,8 @@ const App = () => {
   return (
     <div>
       <div className="App_header">
-        <img className="headerlogo" src="https://blog.creokorea.com//uploads/l_f77a7d016b.png" alt="logo" 
-          Link to="/components/About"/>
+        <Link to="/">
+        <img className="headerlogo" src="https://blog.creokorea.com//uploads/l_f77a7d016b.png" alt="logo"/></Link>
           <span className="nav">             
             <Link to="/components/About">ABOUT</Link>
             <Link to="/components/Creo">CREO</Link>
