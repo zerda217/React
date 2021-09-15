@@ -7,35 +7,24 @@
   background-color: white;
   position: fixed;
   top: 0;
+  height: 30px;
   width: 100%;
 }
 
-/* .App_header {
-  background-color: white;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  justify-content: center;
-  font-size: 10px;
-  color: gray;
-} */
-
 .headerlogo {
-  border: 1px solid green;
-  padding: 5px;
+  padding: 7px;
   width: 80px;
   object-fit: contain;
+  /* border: 1px solid palevioletred; */
 }
 
 .nav {
-  width: 50%;
+  padding: 5px;
+  width: 350px;
   position: fixed;
-  right: 50px;
+  right: 0px;
   font-size: 15px;
+  /* border: 1px solid palevioletred; */
 }
 
 a {  
@@ -48,56 +37,41 @@ a + a {
 }
 
 .Main {
-  border: 1px solid #ff9900;
+  position: relative;
+  top: 30px;
   text-align: center;
-}
-
-/* .Main {
-  border: 1px solid #ff9900;
-  position: fixed;
-  top: 50px;
-  min-height: 15px;
-  height: calc(100vh - 200px) ;
-  width: 100%;
   display: flex;
+  min-height: calc(100vh - 170px);
   flex-direction: column;
-  text-align: center;
-  justify-content: top center;
+  flex: 1;
+  /* min-height: calc(100vh - 200px) ; */
   font-size: 10px;
   color: black;
-} */
+  /* border: 1px solid #ff9900; */
+}
 
-/* .Footer {
+.Footer {
   background-color: black;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  justify-content: center;
-  position: fixed;
-  bottom: 0;
-  height: 200px;
-  width: 100%;
-  font-size: 10px;
   color: white;
+}
 
-  align-items: top center;
-
-} */
-
-/* .FooterUp {
-  position: fixed;
-  bottom: 50px;
+.FooterUp {
   height: 100px;
   width: 100%;
-  background-color: black;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 .FooterDown {
-  position: fixed;
-  bottom: 0;
-  height: 50px;
+  height: 70px;
   width: 100%;
+  position: inherit;
+  bottom: 0;
   background-color: rgb(31, 31, 31);
-  justify-content: bottom;
-} */
+  font-size: 6px;
+  /* border: 1px solid green; */
+}
+
+.copyright {
+    justify-content: center;
+    border: 1px solid green;
+  }

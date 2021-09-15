@@ -1,31 +1,12 @@
-import React, { useState } from 'react'
+// import React from 'react'
 
 function About () {
 
-    const [ name, setName ] = useState("");
-    const [ phone, setPhone ] = useState("");
-
-    const onClick = () => {
-        alert( "name: " + name + "/ phone: " + phone )
-    }
-
-        return (
-            <div>
-                <h1>ABOUT</h1>
-                name:
-                <input type="text" 
-                value={name} 
-                onChange={({ target: {value}}) => setName(value)
-                // onChange={(e) => setName(e.target.value)}
-                
-                }/>
-                phone: 
-                <input type="text" 
-                value={phone} 
-                onChange={({ target: {value}}) => setPhone(value)}/>
-                <button onClick={onClick}>submit</button>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <h1>ABOUT</h1>
+        </div>
+    )
+}
 
 export default About;
