@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Button from './Button';
+import '../App.css';
 
 export default function Footer () {
 
@@ -10,7 +11,7 @@ export default function Footer () {
                     Contact us with
                     your challenge
                     <div>
-                        <Link to = "./Contact">
+                        <Link to = "./Contact2">
                             <Button/>
                         </Link>
                     </div>
@@ -25,7 +26,7 @@ export default function Footer () {
                     <div>대표메일 : hb.kim@creokorea.com</div>
                     <div></div>
                  </div>
-                    <div>© CREO KOREA all right reseved</div>
+                    <div className="copyright">© CREO KOREA all right reseved</div>
                 </div>               
             </div>
         );
