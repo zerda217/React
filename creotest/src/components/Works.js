@@ -41,6 +41,14 @@ export default class Works extends Component {
                     <Title name = "모든 문서를 디지털화"/>
                     <p>{this.state.fifth}</p>
                 </Table>
+                <Table>
+                    <Title name = "테스트"/>
+                    <p>{this.state.fifth}</p>
+                </Table>
+                <Table>
+                    <Title name = "테스트"/>
+                    <p>{this.state.fifth}</p>
+                </Table>
             </div>
         )
     }
