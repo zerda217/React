@@ -1,4 +1,6 @@
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -111,8 +113,6 @@ a + a {
 }
 
 .FooterUp {
-  /* height: 100px;
-  width: 100%; */
   position: relative;
   left: 100px;
   padding: 5px;
@@ -140,6 +140,8 @@ a + a {
 .Footer_li{
   display: flex;
   list-style: none;
+  position: relative;
+  left: 10px;
 }
 .Copyright {
   /* display: flex;
@@ -157,7 +159,7 @@ a + a {
   }
   
   .nav {
-    /* display: none; */
+    display: none;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -176,9 +178,14 @@ a + a {
   flex-direction: column;
   align-items: flex-start;
 }
+.FooterUp {
+  align-items: flex-start;
+  position: relative;
+  left: 10px;
+  
+}
 .FooterDown {
   flex-direction: column;
-
   width: 100%;
 }
     }

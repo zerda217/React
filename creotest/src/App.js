@@ -2,22 +2,19 @@ import React from 'react';
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 import { Home, About, Creo, Works, Careers, Contact2 } from './components';
+import Navbar from './components/Nav/Navbar';
 // import Footer from './components/Footer';
 import Button from './components/Button';
 
-const App = () => {
-//   const toggleBtn = document.querySelector('.nav_toggleBtn');
-//   const menu = document.querySelector('.nav');
 
-// toggleBtn.addEventListener('click', () => {
-// menu.classList.toggle('active');
-// });
+const App = () => {
 
   return (
     <div className="creo">
       <div className="body">
       <div className="wrap">
-      <div className="App_header">
+        <Navbar/>
+      {/* <div className="App_header">
         <Link to="/">
         <img className="headerlogo" src="https://blog.creokorea.com//uploads/l_f77a7d016b.png" alt="logo"/></Link>
           <ul className="nav">             
@@ -28,9 +25,8 @@ const App = () => {
             <li className="nav_li"><Link to="/components/Contact2">CONTACT</Link></li>         
           </ul>
           <Link to="#" className="nav_toggleBtn">o</Link>
-      </div>
+      </div> */}
         <div className="Main">
-          <hr/>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/components/About" component={About} />
