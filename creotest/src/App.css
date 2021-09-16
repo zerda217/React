@@ -28,49 +28,57 @@
 
 .App_header {
   display: flex;
+  align-items: center;
   background-color: white;
   position: fixed;
   top: 0;
   z-index: 1;
+  padding: 3px;
   height: 30px;
   width: 100%;
 }
 
 .headerlogo {
-  padding: 7px;
-  width: 80px;
+  padding: 10px;
+  width: 90px;
   object-fit: contain;
   /* border: 1px solid palevioletred; */
 }
 
 .nav {
-  padding: 5px;
   width: 350px;
   position: absolute;
-  right: 0px;
+  right: 100px;
   display: flex;
+  list-style: none;
+  padding-left: 0;
   font-size: 15px;
-  border: 1px solid palevioletred;
+  /* border: 1px solid palevioletred; */
 }
 
 .nav_li {
-  display: flex;
-  flex-direction: column;
+  padding: 8px 12px;
+}
+
+.nav_li:hover {
+  background-color: #dddddd;
+  border-radius: 4px;
+}
+
+.nav_toggleBtn {
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: gold;
 }
 
 a {  
   color: inherit;
-  text-decoration: inherit;
+  text-decoration: none;
 }
-
+/* 
 a + a {
   margin: 0.3rem;
-}
-
-/* @media (max-width: 768px) {
-.App_header {
-    flex-direction: column;
-  }
 } */
 
 /* Main */
@@ -92,6 +100,7 @@ a + a {
 /* Footer */
 
 .Footer {
+  /* display: flex; */
   position: absolute;
   bottom: 0;
   left: 0;
@@ -117,40 +126,59 @@ a + a {
   bottom: 0; */
   display: flex;
   background-color: rgb(31, 31, 31);
+  width: 100%;
   font-size: 6px;
-  padding: 5px 12px;
+  padding: 12px;
   /* border: 1px solid green; */
 }
-
-.footerlogo {
-  padding: 7px;
+.FooterLogo {
+  padding: 12px;
   width: 80px;
   object-fit: contain;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
-
-/* ol {
-  position: relative;
-  left: 100px;
+.Footer_li{
+  display: flex;
   list-style: none;
-  max-width: 700px;
-  width: 100%;
-  border: 1px solid palegoldenrod;
-} */
-
-li {
-  /* list-style: none; */
-  /* position: relative;
-  left: 100px; */
-  padding: 3px;
-  display: inline-block;
-  margin-right: 150px;
-  border: 1px solid palevioletred;
 }
-
-.copyright {
-  /* position: absolute;
+.Copyright {
+  /* display: flex;
+  position: absolute;
   bottom: 0; */
   text-align: center;
   /* border: 1px solid green; */
   }
+  
+@media (max-width: 768px) {
+  .App_header {
+    flex-direction: column;
+    align-items: flex-start;
+    /* padding: 8px 24px; */
+  }
+  
+  .nav {
+    /* display: none; */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+    .nav_toggleBtn {
+      display: block;
+    }  
+  
+    .navbar_menu.active,
+    .navbar_icons.active {
+      display: flex;
+    }
+
+.Footer {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.FooterDown {
+  flex-direction: column;
+
+  width: 100%;
+}
+    }
