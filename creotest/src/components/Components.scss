@@ -8,7 +8,6 @@
   outline: none;
   border-radius: 0px;
   border: none;
-  cursor: pointer;
 
   height: 2.25rem;
   width: 10rem;
@@ -35,8 +34,6 @@
   font-weight: bold;
   border: 1px solid black;
   border-radius: 30px;
-  cursor: pointer;
-
   height: 2.25rem;
   width: 15rem;
   padding-left: 1rem;
@@ -48,18 +45,37 @@
   background-color: #ffffff00;
   border: 1px solid white;
   border-radius: 30px;
-  cursor: pointer;
-  
   height: 3rem;
   width: 15rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+}
+
+.submit {
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 30px;
+  height: 30px;
+  width: 200px;
+  margin: 30px;
+}
+
+.Subtitle {
+  align-items: center;
+  width: 400px;
+  padding: 10px;
+  border: 1px solid paleturquoise;
 }
 
 //임시
 .imgbox {
-  height: 5rem;
+  height: 12rem;
   background-color: #00002c;
+  justify-content: center;
+  align-items: center;
+}
+
+div {
+  overflow: auto;
 }
 
 //Contact.js 
@@ -68,34 +84,30 @@
   align-items: center;
 }
 .form{
-  // display: flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-top: 100px;
 }
 .box {
-  height: 20px;
+  width: 200px;
+  height: 30px;
   margin: 5px;
   border: 1px solid black;
+  border-radius: 5px;
 }
 
 .message {
+  width: 200px;
+  height: 100px;
+  margin: 5px;
   border: 1px solid black;
+  border-radius: 5px;
 }
 
-.li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-  width: 200px;
-  height: 50px;
-  margin: 1.5rem;
-  border: 1px solid red;
-  background: aqua;
-}
-.li5 {
-  text-align: left;
-  width: 400px;
-  height: 20px;
-  margin: 0.1rem;
+@media (max-width: 768px) {
+  .Subtitle {
+    align-items: center;
+  }
+
 }
