@@ -8,6 +8,9 @@ const Nav = styled.nav`
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
+  font-size: 10px;
+  @media (max-width: 768px) {
+    font-size: 15px;
 
   .logo {
     padding: 15px 0;
@@ -93,6 +96,7 @@ class Navbar extends React.Component {
   onSetRightNavOpen(open) {
     this.setState((prevState) => ({ RightNavOpen: !prevState.RightNavOpen }));
   }
+  
  render() {
   const Burger = () => {
   const [open, setOpen] = useState(false)

@@ -14,18 +14,6 @@ const App = () => {
       <div className="body">
       <div className="wrap">
         <Navbar/>
-      {/* <div className="App_header">
-        <Link to="/">
-        <img className="headerlogo" src="https://blog.creokorea.com//uploads/l_f77a7d016b.png" alt="logo"/></Link>
-          <ul className="nav">             
-            <li className="nav_li"><Link to="/components/About">ABOUT</Link></li>
-            <li className="nav_li"><Link to="/components/Creo">CREO</Link></li>
-            <li className="nav_li"><Link to="/components/Works">WORKS</Link></li>
-            <li className="nav_li"><Link to="/components/Careers">CAREERS</Link></li>
-            <li className="nav_li"><Link to="/components/Contact2">CONTACT</Link></li>         
-          </ul>
-          <Link to="#" className="nav_toggleBtn">o</Link>
-      </div> */}
         <div className="Main">
           <Switch>
             <Route exact path="/" component={Home} />
@@ -39,9 +27,10 @@ const App = () => {
         </div>
       <div className="Footer">
         <div className="FooterUp">
-          Contact us with<br/>
-          your challenge
-          <h6>크레오 코리아 관련 제품 및 기타 궁금하신 점을 해결해 드립니다.</h6>
+          <h1>Contact us with<br/>
+          your challenge</h1>
+          <br/>
+          <h6>크레오 코리아 관련 제품 및 기타 궁금하신 점을 해결해 드립니다.</h6><br/>
         <div>
           <Link to = "./Contact2">
               <Button/>
