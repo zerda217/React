@@ -9,7 +9,7 @@ export default class Creo extends Component {
         return (
             <div>
                 <Title className="ABOUT CREO"></Title>
-                    <img className="aboutCreo" src=" " alt="ABOUT CREO"/>
+                    <img className="aboutCreo" src="https://blog.creokorea.com//uploads/j_ae3930b51e.png" alt="ABOUT CREO"/>
                     <p>크레오코리아는 클라이언트의 니즈와 고객의 감성을 충족시키는 UI(사용자 인터페이스)와</p>
                     <p>긍정적인 UX(사용자경험)설계 경험을 바탕으로 IoT 기술까지 융합된 전문성을 갖추었습니다.</p>
                 
