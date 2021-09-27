@@ -8,20 +8,33 @@
   outline: none;
   border-radius: 0px;
   border: none;
-
   height: 2.25rem;
   width: 10rem;
   padding-left: 1rem;
   padding-right: 1rem;
   font-size: 1rem;
+  background: gray;
 
-  background: gray; // 주석 사용
   &:hover {
     background: lighten(gray, 10%); // 색상 10% 밝게
   }
 
   &:active {
     background: darken(gray, 10%); // 색상 10% 어둡게
+  }
+
+  //메인 화면 버튼
+  &.view {
+    background: rgb(185, 185, 185);
+    text-align: center;
+
+    &:hover {
+      background: lighten(rgb(185, 185, 185), 10%); // 색상 10% 밝게
+    }
+  
+    &:active {
+      background: darken(rgb(185, 185, 185), 10%); // 색상 10% 어둡게
+    }
   }
 }
 
@@ -36,8 +49,8 @@
   border-radius: 30px;
   height: 2.25rem;
   width: 15rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin: 1.5rem;
+  background: none;
 }
 
 .Outline {
@@ -47,6 +60,16 @@
   border-radius: 30px;
   height: 3rem;
   width: 15rem;
+  top: 7.5rem;
+  position: relative;
+  z-index: -1;
+}
+
+.Works, .creoKitchen {
+  height: 250px;
+  position: relative;
+  top: -3rem;
+  z-index: -2;
 }
 
 .submit {
@@ -59,17 +82,20 @@
   margin: 30px;
 }
 
-.Subtitle {
-  align-items: center;
-  width: 400px;
-  padding: 10px;
-  // border: 1px solid paleturquoise;
+h3 {
+  padding: 2.5rem;
+  
+  @media (max-width: 768px) {
+     h3 {
+      background-color: palevioletred;
+    }
+  }
 }
 
 //임시
 .imgbox {
-  height: 12rem;
-  background-color: #00002c;
+  height: 15rem;
+  border: 1px solid red;
   justify-content: center;
   align-items: center;
 }
@@ -103,11 +129,4 @@ div {
   margin: 5px;
   border: 1px solid black;
   border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-  .Subtitle {
-    align-items: center;
-  }
-
 }

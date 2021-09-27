@@ -13,7 +13,7 @@ const Nav = styled.nav`
     font-size: 15px;
 
   .logo {
-    padding: 15px 0;
+    padding: 5px 0;
   }
 `
 
@@ -23,7 +23,7 @@ const StyledBurger = styled.div`
   position: fixed;
   top: 10px;
   right: 20px;
-  z-index: 20;
+  z-index: 99;
   display: none;
 
   @media (max-width: 768px) {
@@ -76,7 +76,7 @@ const Ul = styled.ul`
     width: 300px;
     z-index: 1;
     padding-top: 4rem;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 
     li {
       color: #fff;
@@ -104,7 +104,7 @@ class Navbar extends React.Component {
   return (
     <>
       <StyledBurger open={open} onClick={() => setOpen(!open)}>
-        <div />
+          <div />
           <div />
           <div />
         </StyledBurger>

@@ -1,8 +1,12 @@
 import React from 'react';
 import './Components.scss';
 
-function Button() {
-  return <button className="Button">CONTACT US</button>;
+const Button = ({
+  children, theme = 'default',
+}) => {
+  return (
+  <button className="Button"> {children} </button>
+  )
 }
 
 export default Button;
