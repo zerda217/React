@@ -23,19 +23,17 @@
     background: darken(gray, 10%); // 색상 10% 어둡게
   }
 
-  //메인 화면 버튼
-  &.view {
-    background: rgb(185, 185, 185);
-    text-align: center;
-
-    &:hover {
-      background: lighten(rgb(185, 185, 185), 10%); // 색상 10% 밝게
-    }
-  
-    &:active {
-      background: darken(rgb(185, 185, 185), 10%); // 색상 10% 어둡게
-    }
+//메인 화면 버튼
+.view {
+  text-align: center;
+  background: rgb(185, 185, 185);
+  &:hover {
+    background: lighten(rgb(185, 185, 185), 10%); // 색상 10% 밝게
   }
+  &:active {
+    background: darken(rgb(185, 185, 185), 10%); // 색상 10% 어둡게
+  }
+}
 }
 
 // Title.js
@@ -55,22 +53,36 @@
 
 .Outline {
   color: white;
-  background-color: #ffffff00;
+  background: salmon;
   border: 1px solid white;
   border-radius: 30px;
   height: 3rem;
   width: 15rem;
-  top: 7.5rem;
+  // z-index: -1;
   position: relative;
-  z-index: -1;
+  top: 5rem;
+  // left: 50%;
+  // transform: translate(-50%,-40%);
 }
 
-.Works, .creoKitchen {
-  height: 250px;
-  position: relative;
-  top: -3rem;
-  z-index: -2;
+.WorksHeader {
+  background: url("https://mblogthumb-phinf.pstatic.net/20160106_209/kukjeart_inc_1452055876208XMVrB_JPEG/%C5%E4%B3%A2_%285%29.jpg?type=w800") no-repeat center;
+  height: 500px;
 }
+
+.CareersHeader {
+  background: url("https://w.namu.la/s/b8e7f427d377cdb94696db8eb193494f0f5b745abdf5e2577a89de80607e5aad0a8306842f9123eb6d265e72825c645c4f27c3c1fb6590cff420f50f473b650b56ca3d222ec64b63945887d2d4f07f118210e5d5478cc5684197e1f2e61394d1") no-repeat center;
+  height: 500px;
+}
+
+// .Works, .creoKitchen {
+//   height: 500px;
+//   position: relative;
+//   z-index: -2;
+//   // @media (max-width: 768px) {
+    
+//   // }
+// }
 
 .submit {
   color: black;
@@ -84,7 +96,6 @@
 
 h3 {
   padding: 2.5rem;
-  
   @media (max-width: 768px) {
      h3 {
       background-color: palevioletred;
@@ -92,17 +103,14 @@ h3 {
   }
 }
 
-//임시
-.imgbox {
-  height: 15rem;
-  border: 1px solid red;
-  justify-content: center;
-  align-items: center;
+p {
+  padding: 1rem;
 }
 
-div {
-  overflow: auto;
-}
+// div {
+  // border: 1px solid salmon;
+  // overflow: auto;
+// }
 
 //Contact.js 
 .contact {

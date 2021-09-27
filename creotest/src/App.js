@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 import { Home, About, Creo, Works, Careers, Contact2 } from './components';
-import Navbar from './components/Nav/Navbar';
+import Navbar2 from './components/Nav/Navbar2';
 import Footer from './components/Footer';
 // import Button from './components/Button';
 
@@ -13,7 +13,7 @@ const App = () => {
     <div className="creo">
       <div className="body">
       <div className="wrap">
-        <Navbar/>
+        <Navbar2/>
         <div className="Main">
           <Switch>
             <Route exact path="/" component={Home} />

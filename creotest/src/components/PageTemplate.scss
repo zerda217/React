@@ -27,22 +27,22 @@
 }
 
 .home {
-    background:#dbff99;
-    width: 1024px;
+    border: 1px solid goldenrod;
+    width: 100%;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 1rem 0;
 
     @media(max-width: 768px) {
-        background: yellowgreen;
+        border: 1px solid slateblue;
         margin: 0 auto;
-        width: calc(100% - 2rem);
+        width: 100%;
     }
 }
 
 .item {
     margin-left: auto;
     margin-right: auto;
-    width: 500px;
+    width: 100%;
     padding-top: 1rem;
     align-items: center;
     padding: 0.5rem;

@@ -16,9 +16,9 @@ export default class Works extends Component {
     render() {
         return (
             <div>
-                <div>
+                <div className="WorksHeader">
                     <button className="Outline">HACCPERP YESSUP</button>
-                    <img className="Works" src="https://w.namu.la/s/b8e7f427d377cdb94696db8eb193494f0f5b745abdf5e2577a89de80607e5aad0a8306842f9123eb6d265e72825c645c4f27c3c1fb6590cff420f50f473b650b56ca3d222ec64b63945887d2d4f07f118210e5d5478cc5684197e1f2e61394d1" alt="Works"/><br/>
+                    {/* <img className="Works" src="https://mblogthumb-phinf.pstatic.net/20160106_209/kukjeart_inc_1452055876208XMVrB_JPEG/%C5%E4%B3%A2_%285%29.jpg?type=w800" alt="Works"/><br/> */}
                 </div>
                 <h3>YESSUP(예썹)은 HACCP(식품안전관리인증기준)을 위한 스마트 솔루션입니다. <br/> 까다로운 HACCP의 행정적 절차는 식품 공장의 생산성 향상에 커다란 걸림돌 입니다.<br/> YESSUP (예썹)은 IoT를 기반으로 한 실시간 공정 모니터링 및 문제 상황 대처와 동시에 <br/>수십 종의 CCP 일지와 법적 서류들의 작성과 보관의 용이성까지 확보 할 수 있습니다. <br/>YESSUP (예썹)은 식품 안전 신뢰도 확보와 생산 효율성 제고를 동시에 실현합니다.</h3>
                 <Table>
