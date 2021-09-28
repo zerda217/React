@@ -80,15 +80,6 @@
   height: 500px;
 }
 
-// .Works, .creoKitchen {
-//   height: 500px;
-//   position: relative;
-//   z-index: -2;
-//   // @media (max-width: 768px) {
-    
-//   // }
-// }
-
 .submit {
   color: black;
   font-weight: bold;
@@ -97,6 +88,10 @@
   height: 30px;
   width: 200px;
   margin: 30px;
+}
+
+.home {
+  object-fit: contain;
 }
 
 h3 {

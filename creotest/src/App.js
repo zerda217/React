@@ -1,15 +1,15 @@
 import React from 'react';
+import { Provider } from './context';
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 import { Home, Creo, Team, Works, Careers, Contact2 } from './components';
 import Navbar2 from './components/Nav/Navbar2';
 import Footer from './components/Footer';
-// import Button from './components/Button';
-
 
 const App = () => {
 
   return (
+    <Provider>
     <div className="creo">
       <div className="body">
       <div className="wrap">
@@ -28,7 +28,8 @@ const App = () => {
       <Footer/>
       </div>
     </div>
-  </div>   
+  </div>
+  </Provider> 
   );
 }
 
