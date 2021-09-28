@@ -26,7 +26,7 @@ const Home = ({children}) => (
             </Link>
         </div>
         <Title>SAHARA</Title>
-        <img className="Works" src="https://mblogthumb-phinf.pstatic.net/20160106_209/kukjeart_inc_1452055876208XMVrB_JPEG/%C5%E4%B3%A2_%285%29.jpg?type=w800" alt="Works"/>
+        <img className="Works" src="https://ww.namu.la/s/50ec79e07868dd8be7c62f3ca97267517b4f7b8d43b05470c645b336541fdd3593e3a3469a82a8c904f050382ff3c8551606ac7de623941d726582f74a03670a7f0972e3a8439ec9911ee60a1a5c76e1856d5e55e53a42f365f1c95a145ef612" alt="Works"/>
         <div>
             <Link to = "/components/Careers">
                 <Button theme="view">view more</Button>
