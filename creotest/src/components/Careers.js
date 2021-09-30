@@ -15,9 +15,9 @@ export default class Careers extends Component {
     render() {
         return (
             <div>
-                <div className="imgbox">
-                    <img className="creoKitchen" src=" " alt="creoKitchen"/><br/>
+                <div className="CareersHeader">
                     <button className="Outline">CREO KITCHEN</button>
+                    {/* <img className="creoKitchen" src="https://w.namu.la/s/b8e7f427d377cdb94696db8eb193494f0f5b745abdf5e2577a89de80607e5aad0a8306842f9123eb6d265e72825c645c4f27c3c1fb6590cff420f50f473b650b56ca3d222ec64b63945887d2d4f07f118210e5d5478cc5684197e1f2e61394d1" alt="creoKitchen"/><br/> */}
                 </div>
                 <h3>크레오 키친은 스스로 조리하는 주방입니다. <br/> 사람이 조작하지 않아도 스스로 신호를 지키고 <br/> 길을 찾아 최적의 주행을 하는 자율 주행 차량처럼 <br/> 사람의 개입 없이 스스로 주문을 인식하고 조리하여 <br/> 최적의 요리를 제공하고, 최소한의 자원 소모로 <br/> 균일한 맛과 오류 없는 위생 관리를 구현합니다.</h3>
                 <Table>

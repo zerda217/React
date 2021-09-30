@@ -8,14 +8,13 @@
   outline: none;
   border-radius: 0px;
   border: none;
-
   height: 2.25rem;
   width: 10rem;
   padding-left: 1rem;
   padding-right: 1rem;
   font-size: 1rem;
+  background: gray;
 
-  background: gray; // 주석 사용
   &:hover {
     background: lighten(gray, 10%); // 색상 10% 밝게
   }
@@ -23,6 +22,18 @@
   &:active {
     background: darken(gray, 10%); // 색상 10% 어둡게
   }
+
+//메인 화면 버튼
+.view {
+  text-align: center;
+  background: rgb(185, 185, 185);
+  &:hover {
+    background: lighten(rgb(185, 185, 185), 10%); // 색상 10% 밝게
+  }
+  &:active {
+    background: darken(rgb(185, 185, 185), 10%); // 색상 10% 어둡게
+  }
+}
 }
 
 // Title.js
@@ -36,17 +47,37 @@
   border-radius: 30px;
   height: 2.25rem;
   width: 15rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin: 1.5rem;
+  background: none;
 }
 
 .Outline {
   color: white;
-  background-color: #ffffff00;
+  background: salmon;
   border: 1px solid white;
   border-radius: 30px;
   height: 3rem;
   width: 15rem;
+  // z-index: -1;
+  position: relative;
+  top: 5rem;
+  // left: 50%;
+  // transform: translate(-50%,-40%);
+}
+
+.WorksHeader {
+  background: url("https://mblogthumb-phinf.pstatic.net/20160106_209/kukjeart_inc_1452055876208XMVrB_JPEG/%C5%E4%B3%A2_%285%29.jpg?type=w800") no-repeat center;
+  height: 500px;
+}
+
+.CareersHeader {
+  background: url("https://w.namu.la/s/b8e7f427d377cdb94696db8eb193494f0f5b745abdf5e2577a89de80607e5aad0a8306842f9123eb6d265e72825c645c4f27c3c1fb6590cff420f50f473b650b56ca3d222ec64b63945887d2d4f07f118210e5d5478cc5684197e1f2e61394d1") no-repeat center;
+  height: 500px;
+}
+
+.SaharaHeader {
+  background: url("https://ww.namu.la/s/50ec79e07868dd8be7c62f3ca97267517b4f7b8d43b05470c645b336541fdd3593e3a3469a82a8c904f050382ff3c8551606ac7de623941d726582f74a03670a7f0972e3a8439ec9911ee60a1a5c76e1856d5e55e53a42f365f1c95a145ef612") no-repeat center;
+  height: 500px;
 }
 
 .submit {
@@ -59,24 +90,27 @@
   margin: 30px;
 }
 
-.Subtitle {
-  align-items: center;
-  width: 400px;
-  padding: 10px;
-  // border: 1px solid paleturquoise;
+.home {
+  object-fit: contain;
 }
 
-//임시
-.imgbox {
-  height: 12rem;
-  background-color: #00002c;
-  justify-content: center;
-  align-items: center;
+h3 {
+  padding: 2.5rem;
+  @media (max-width: 768px) {
+     h3 {
+      background-color: palevioletred;
+    }
+  }
 }
 
-div {
-  overflow: auto;
+p {
+  padding: 1rem;
 }
+
+// div {
+  // border: 1px solid salmon;
+  // overflow: auto;
+// }
 
 //Contact.js 
 .contact {
@@ -103,11 +137,4 @@ div {
   margin: 5px;
   border: 1px solid black;
   border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-  .Subtitle {
-    align-items: center;
-  }
-
 }

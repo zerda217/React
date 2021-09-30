@@ -16,7 +16,7 @@
   }
 
 .wrap {
-  min-height: 100vh;
+  min-height: 100%;
   position: relative;
   padding-bottom: 400px;
   /* background-color: pink; */
@@ -41,7 +41,7 @@
 }
 
 .headerlogo {
-  margin: 5px 0;
+  margin: 15px 0;
   width: 90px;
   object-fit: contain;
   /* border: 1px solid palevioletred; */
@@ -60,7 +60,7 @@ a {
   text-align: center;
   margin: 0;
   height: 100%;
-  /* min-height: calc(100vh - 170px); */
+  min-height: calc(100% - 170px);
   font-size: 10px;
   color: black;
   /* border: 1px solid #ff9900; */
@@ -72,7 +72,8 @@ a {
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  /* right: 0; */
   /* padding: 5px; */
   background-color: black;
   color: white;
@@ -81,8 +82,9 @@ a {
 .FooterUp {
   position: relative;
   left: 100px;
+  width: 60%;
   padding: 5px;
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
 }
 
 .FooterDown {
@@ -110,9 +112,10 @@ a {
   left: 10px;
 }
 .Copyright {
-  /* display: flex;
+  display: flex;
   position: absolute;
-  bottom: 0; */
+  left: 102px;
+  bottom: 0;
   text-align: center;
   /* border: 1px solid green; */
   }
@@ -132,14 +135,9 @@ a {
   }
 
 .Main {
-  position: relative;
-  top: 10px;
-  text-align: center;
-  margin: 0;
-  height: 120vh;
-  font-size: 10px;
-  color: black;
+  margin: 20px 0;
 }
+
 .Footer {
   flex-direction: column;
   align-items: flex-start;
@@ -162,6 +160,7 @@ a {
 }
 .Copyright {
   margin: 10px;
-  text-align: left;
+  left: 12px;
+  bottom: 0;
 }
     }

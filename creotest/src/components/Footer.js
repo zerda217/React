@@ -14,7 +14,7 @@ export default function Footer () {
         <h6>크레오 코리아 관련 제품 및 기타 궁금하신 점을 해결해 드립니다.</h6><br/>
       <div>
         <Link to = "./Contact2">
-            <Button/>
+            <Button>CONTACT US</Button>
         </Link>
       </div>
     </div>
