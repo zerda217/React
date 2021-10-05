@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Title from './Title';
 import './Components.scss';
 
-function Contact2 () {
+function Contact () {
 
     const [ name, setName ] = useState("");
     const [ phone, setPhone ] = useState("");
@@ -44,4 +44,4 @@ function Contact2 () {
         )
     }
 
-export default Contact2;
+export default Contact;

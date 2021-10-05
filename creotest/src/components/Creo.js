@@ -1,9 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { Link, Route } from 'react-router-dom';
+import Works from './Works';
 import Title from './Title';
 import './Components.scss';
+import { useSelector } from 'react-redux';
 
-function Creo() {
+export default function Creo() {
 
     const aboutCreo = useSelector( (크레오설명) => 크레오설명);
 
@@ -16,8 +18,13 @@ function Creo() {
                 <p>음식폐기물을 처리한 결과물을 비료/바이오 연료 등으로 재활용</p>
                 <p>[자원&에너지 순환형 푸드테크 체인] 완성</p>
                 <img className="foodTech" src=" " alt="FOOD TECH"/>
+                
+                <div className = "reiter ">
+                    <Link to = "/Works">
+                        <button onClick=''>Works</button>
+                    </Link>
+                    <Route path="/Works" component={Works} />
+                </div>
         </div>
     );
 }
-
-export default Creo;

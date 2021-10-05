@@ -115,9 +115,9 @@ class Navbar extends React.Component {
       <>
       <Ul open={open}>
         <li className="nav_li" onClick={() => this.onSetRightNavOpen(true)}><Link to="/Creo">ABOUT CREO</Link></li>
-        <li className="nav_li" onClick={() => this.onSetRightNavOpen(true)}><Link to="/Works">WORKS</Link></li>
-        <li className="nav_li" onClick={() => this.onSetRightNavOpen(true)}><Link to="/Team">TEAM</Link></li>
-        <li className="nav_li" onClick={() => this.onSetRightNavOpen(true)}><Link to="/Careers">CAREERS</Link></li>
+        <li className="nav_li" onClick={() => this.onSetRightNavOpen(true)}><Link to="/Profile/kitchen">WORKS</Link></li>
+        <li className="nav_li" onClick={() => this.onSetRightNavOpen(true)}><Link to="/Profile/team">TEAM</Link></li>
+        <li className="nav_li" onClick={() => this.onSetRightNavOpen(true)}><Link to="/Profile/yessup">CAREERS</Link></li>
         <li className="nav_li" onClick={() => this.onSetRightNavOpen(true)}><Link to="/Contact">CONTACT</Link></li>  
       </Ul>
       </>
