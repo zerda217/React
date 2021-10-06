@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Title from './Title';
 import './Components.scss';
 
-function Contact () {
+function Contact ({match}) {
 
     const [ name, setName ] = useState("");
     const [ phone, setPhone ] = useState("");
