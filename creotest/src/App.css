@@ -62,7 +62,7 @@ a {
   min-height: calc(100% - 170px);
   font-size: 10px;
   color: black;
-  border: 1px solid #ff9900;
+  /* border: 1px solid #ff9900; */
 }
 
 /* Footer */
@@ -82,7 +82,7 @@ a {
   left: 100px;
   width: 85%;
   padding: 5px;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   text-align: left;
 }
 

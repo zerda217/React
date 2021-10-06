@@ -2,6 +2,7 @@ import React from 'react';
 import Table from './Table';
 import Title from './Title';
 import './Components.scss';
+import { useRouteMatch } from 'react-router-dom';
   
 // 사용할 데이터
 const data = {
@@ -49,6 +50,8 @@ const Profile = ({ match }) => {
   // 파라미터를 받아올 땐 match 안에 들어있는 params 값을 참조합니다.
   const { title } = match.params;
   const profile = data[title];
+  // const { path, url } = useRouteMatch();
+
   if (!profile) {
     return <div>존재하지 않는 페이지입니다.</div>;
   }
