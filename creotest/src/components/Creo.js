@@ -1,5 +1,12 @@
 import React from 'react';
-import {   BrowserRouter as Router, Switch, Route, Link,  useParams, useRouteMatch } from 'react-router-dom';
+import { 
+        BrowserRouter as Router, 
+        Switch, 
+        Route, 
+        Link, 
+        useParams, 
+        useRouteMatch } 
+        from 'react-router-dom';
 import Title from './Title';
 import Profile from './Profile';
 import Home from './Home';
@@ -22,13 +29,9 @@ function Nesting() {
             </li>
           </ul>
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/Contact">
-              <Contact />
-            </Route>
-            <Route exact path="/Profile/:title" component={Profile} />
+            <Route exact path="/" render={() => <Home />} />
+            <Route path="/Contact" render={() => <Contact />} />
+            <Route exact path="/Profile/:title" render={(props) => <Profile {...props}/>} />
           </Switch>
         </div>
       </Router>
@@ -45,8 +48,7 @@ function Creo() {
                 <p>음식폐기물을 처리한 결과물을 비료/바이오 연료 등으로 재활용</p>
                 <p>[자원&에너지 순환형 푸드테크 체인] 완성</p>
                 <img className="foodTech" src=" " alt="FOOD TECH"/>
-
-                <Nesting></Nesting>
+                <Nesting />
         </>
     );
 };

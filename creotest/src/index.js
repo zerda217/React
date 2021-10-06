@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import './index.css';
-import App from './App';
+import Root from './Root';
 import reportWebVitals from './reportWebVitals';
 
 /* 리덕스에서 관리할 내용 */
@@ -48,7 +48,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-         <App />
+         <Root />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
