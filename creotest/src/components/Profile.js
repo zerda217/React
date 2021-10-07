@@ -2,7 +2,7 @@ import React from 'react';
 import Table from './Table';
 import Title from './Title';
 import './Components.scss';
-import { useRouteMatch } from 'react-router-dom';
+// import { useRouteMatch } from 'react-router-dom';
   
 // 사용할 데이터
 const data = {
