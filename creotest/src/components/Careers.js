@@ -1,42 +1,43 @@
-import React, { Component } from 'react'
-// import PageTemplate from './PageTemplate'
+
+import { useState } from 'react';
 import Table from './Table';
 import Title from './Title';
 import './Components.scss';
 
-export default class Careers extends Component {
-    state = {
-        first: 'AI 제어시스템이 재료의 선정정, 계량, 투입부터 조리, 플레이팅, 세척까지 주방에서 일어나는 조리과정을 스스로 판단하여 제어하고 동작합니다.',
-        second: '사전에 세팅된 레시피대로 정밀하게 재료의 조리 시간과 온도, 방법 등을 수행해 항상 일정한 품질의 규격화된 요리 결과물을 완성합니다.',
-        third: '식품 안전 및 위생 관리 프로세스를 전체 조리 공정 및 설비에 적용해, 식품 안전 위해요소를 차단하고 데이터화하여여 상시 관리합니다.',
-        forth: '주방 내 작업단위를 기반으로 모듈화된 시스템으로 어떠한 형태의 주방에도 적용 가능하며, 비용 및 공간적 제약을 최소화 합니다.'
-    }
+function Careers () {
+    const [header, setHeader] = useState('CREO KITCHEN');
 
-    render() {
-        return (
-            <div>
-                <div className="CareersHeader">
-                    <button className="Outline">CREO KITCHEN</button>
-                    {/* <img className="creoKitchen" src="https://w.namu.la/s/b8e7f427d377cdb94696db8eb193494f0f5b745abdf5e2577a89de80607e5aad0a8306842f9123eb6d265e72825c645c4f27c3c1fb6590cff420f50f473b650b56ca3d222ec64b63945887d2d4f07f118210e5d5478cc5684197e1f2e61394d1" alt="creoKitchen"/><br/> */}
-                </div>
-                <h3>크레오 키친은 스스로 조리하는 주방입니다. <br/> 사람이 조작하지 않아도 스스로 신호를 지키고 <br/> 길을 찾아 최적의 주행을 하는 자율 주행 차량처럼 <br/> 사람의 개입 없이 스스로 주문을 인식하고 조리하여 <br/> 최적의 요리를 제공하고, 최소한의 자원 소모로 <br/> 균일한 맛과 오류 없는 위생 관리를 구현합니다.</h3>
-                <Table>
-                    <Title name = "AI 제어 시스템"/>
-                    <p>{this.state.first}</p>
-                </Table>
-                <Table>
-                    <Title name = "사전에 세팅된 레시피"/>
-                    <p>{this.state.second}</p>
-                </Table>
-                <Table>
-                    <Title name = "식품 안전 및 위생 관리 프로세스"/>
-                    <p>{this.state.third}</p>
-                </Table>
-                <Table>
-                    <Title name = "작업단위를 기반으로 모듈화된 시스템"/>
-                    <p>{this.state.forth}</p>
-                </Table>
+    // const croeKitchen = () => [
+    //     {
+    //     header: '크레오 키친',
+    //     title: 
+    //     }
+    // ];
+
+    return (
+        <div>
+            <div className="CareersHeader">
+                <button className="Outline">{header}</button>
             </div>
-        )
-    }
+            <h3>크레오 키친은 스스로 조리하는 주방입니다. <br/> 사람이 조작하지 않아도 스스로 신호를 지키고 <br/> 길을 찾아 최적의 주행을 하는 자율 주행 차량처럼 <br/> 사람의 개입 없이 스스로 주문을 인식하고 조리하여 <br/> 최적의 요리를 제공하고, 최소한의 자원 소모로 <br/> 균일한 맛과 오류 없는 위생 관리를 구현합니다.</h3>
+            <Table>
+                <Title name = "AI 제어 시스템"/>
+                <p><p>AI 제어시스템이 재료의 선정정, 계량, 투입부터 조리, 플레이팅, 세척까지 <br/> 주방에서 일어나는 조리과정을 스스로 판단하여 제어하고 동작합니다.</p></p>
+            </Table>
+            <Table>
+                <Title name = "사전에 세팅된 레시피"/>
+                <p><p>사전에 세팅된 레시피대로 정밀하게 재료의 조리 시간과 온도, 방법 등을 <br/> 수행해 항상 일정한 품질의 규격화된 요리 결과물을 완성합니다.</p></p>
+            </Table>
+            <Table>
+                <Title name = "식품 안전 및 위생 관리 프로세스"/>
+                <p>식품 안전 및 위생 관리 프로세스를 전체 조리 공정 및 설비에 적용해,<br/> 식품 안전 위해요소를 차단하고 데이터화하여여 상시 관리합니다.</p>
+            </Table>
+            <Table>
+                <Title name = "작업단위를 기반으로 모듈화된 시스템"/>
+                <p>주방 내 작업단위를 기반으로 모듈화된 시스템으로 어떠한 형태의 주방에도 적용 가능하며, <br/>비용 및 공간적 제약을 최소화 합니다.</p>
+            </Table>
+        </div>
+    )
 }
+
+export default Careers;

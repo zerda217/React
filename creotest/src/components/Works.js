@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import PageTemplate from './PageTemplate'
 import Table from './Table';
 import Title from './Title';
 import './Components.scss';

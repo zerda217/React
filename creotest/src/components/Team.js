@@ -1,25 +1,20 @@
-import React, { Component } from 'react'
-// import PageTemplate from './PageTemplate'
 import Table from './Table';
 import Title from './Title';
 import './Components.scss';
-import { useContext } from "react";
-import { Context } from "../context/index";
 
 function Team () {
-    const {
-        state: {
-          productList: { computer },
-        },
-      } = useContext(Context);
 
         return (
             <div>
                 <div className="SaharaHeader">
                     <button className="Outline">SAHARA</button>
                 </div>
-                {JSON.stringify(computer)}
-                <h3>SAHARA(사하라)는 IoT기반 스마트 음식 폐기물 처리기입니다.<br/> 3년간의 연구 개발 끝에 자체 개발한 SAHARA(사하라) 프로페셔널은 <br/> 매년 500만톤 이상 발생하며 해마다 3%씩 증가하는 음식 폐기물 문제에 최적화된 솔루션입니다. <br/> 기존의 방식으로는 한계가 있던 음식 폐기물 문제에 SAHARA(사하라)만의 <br/> 강력한 건조 분쇄와 IoT 기술로 다각도로 음식 폐기물 문제에 접근합니다. <br/> SAHARA(사하라)는 인류의 지속 가능한 식생활을 추구합니다.</h3>
+                <h3>SAHARA(사하라)는 IoT기반 스마트 음식 폐기물 처리기입니다.<br/> 
+                    3년간의 연구 개발 끝에 자체 개발한 SAHARA(사하라) 프로페셔널은 <br/> 
+                    매년 500만톤 이상 발생하며 해마다 3%씩 증가하는 음식 폐기물 문제에 최적화된 솔루션입니다. <br/> 
+                    기존의 방식으로는 한계가 있던 음식 폐기물 문제에 SAHARA(사하라)만의 <br/> 
+                    강력한 건조 분쇄와 IoT 기술로 다각도로 음식 폐기물 문제에 접근합니다. <br/> 
+                    SAHARA(사하라)는 인류의 지속 가능한 식생활을 추구합니다.</h3>
                 <Table>
                     <Title name = "AI 제어 시스템"/>
                     <p>강력한 건조 분쇄를 통해 <br/> 최대 80%까지 부피 절감이 가능합니다.</p>
