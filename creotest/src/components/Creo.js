@@ -1,28 +1,16 @@
 import React from 'react';
-import { 
-        BrowserRouter as Router, 
-        Switch, 
-        Route, 
-        Link,
-        useParams, 
-        useRouteMatch } 
-        from 'react-router-dom';
+import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Title from './Title';
 import { Home, Profile, Contact } from './'
-import {Posts} from './pages'
-// import Profile from './Profile';
-// import Home from './Home';
-// import Contact from './Contact';
 import './Components.scss';
 
 function Nesting() {
-
-    return (
+  return (
       <Router>
         <div>
           <ul className="reiter">
             <li>
-              <Link to="/"><button>Home</button></Link>
+              <Link to="/home"><button>Home</button></Link>
             </li>
             <li>
               <Link to="/Contact"><button>Contact</button></Link>
@@ -30,15 +18,11 @@ function Nesting() {
             <li>
               <Link to="/Profile/kitchen"><button>Profile</button></Link>
             </li>
-            <li>
-              <Link to="/posts"><button>posts</button></Link>
-            </li>
           </ul>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route path="/home" component={Home} />
             <Route path="/Contact" component={Contact} />
-            <Route exact path="/Profile/:title" component={Profile} />
-            <Route exact path="/posts" component={Posts} />
+            <Route path="/Profile/:title" component={Profile} />
           </Switch>
         </div>
       </Router>
