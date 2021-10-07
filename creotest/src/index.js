@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import './index.css';
 import Root from './Root';
-
 import reportWebVitals from './reportWebVitals';
 
 /* 리덕스에서 관리할 내용 */
