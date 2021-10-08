@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 // import { HashRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Title from './Title';
-import { Home, Profile, Contact } from './';
+import { Home, Team, Profile, Contact } from './';
 import './Components.scss';
 
 // function Nesting (  ) {
@@ -34,11 +34,26 @@ import './Components.scss';
 //   }
 
 function Creo() {
-  const [count, setCount] = useState( 0 );
-  
-  const onClick = () => {
-    setCount(count+ 1);
-    console.info('click1', count);
+  const [goHome, setGohome] = useState( true )
+  const [goContact, setGocontact] = useState( false )
+  const [goTeam, setGoteam] = useState( false )
+
+  const onClick1 = () => {
+    setGohome( true )
+    setGocontact( false )
+    setGoteam( false )
+  }
+
+  const onClick2 = () => {
+    setGohome( false )
+    setGocontact( true )
+    setGoteam( false )
+  }
+
+  const onClick3 = () => {
+    setGohome( false )
+    setGocontact( false )
+    setGoteam( true )
   }
 
   return (
@@ -50,11 +65,14 @@ function Creo() {
         <p>[자원&에너지 순환형 푸드테크 체인] 완성</p>
         <img className="foodTech" src=" " alt="FOOD TECH"/>
         <p>
-        <button onClick={onClick}>-클릭1-</button>
+        <button onClick={onClick1}>-클릭1-</button>
+        <button onClick={onClick2}>-클릭2-</button>
+        <button onClick={onClick3}>-클릭3-</button>
         <p>
-        {count}
-        <Contact />
-
+        {/* {count} */}
+        { goHome && <Home /> } 
+        { goContact && <Contact /> }
+        { goTeam && <Team /> }
         </p>
         </p>
         </>
