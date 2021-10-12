@@ -33,10 +33,20 @@ import './Components.scss';
 //     );
 //   }
 
+
+
 function Creo() {
-  const [goHome, setGohome] = useState( true )
+  const [goHome, setGohome] = useState( false )
   const [goContact, setGocontact] = useState( false )
   const [goTeam, setGoteam] = useState( false )
+
+  function countArr() {
+    let i = 0
+    for (i<4; i++;) {
+      i.push(i)
+    }
+    return i;
+  }
 
   const onClick1 = () => {
     setGohome( true )
@@ -70,6 +80,13 @@ function Creo() {
         <button onClick={onClick3}>-클릭3-</button>
         <p>
         {/* {count} */}
+        {/* {countArr.map((count, index) => (
+          <span key={index}>
+            {count}
+            {" / "}
+          </span>
+        ))} */}
+
         { goHome && <Home /> } 
         { goContact && <Contact /> }
         { goTeam && <Team /> }
