@@ -40,14 +40,6 @@ function Creo() {
   const [goContact, setGocontact] = useState( false )
   const [goTeam, setGoteam] = useState( false )
 
-  function countArr() {
-    let i = 0
-    for (i<4; i++;) {
-      i.push(i)
-    }
-    return i;
-  }
-
   const onClick1 = () => {
     setGohome( true )
     setGocontact( false )
@@ -80,12 +72,6 @@ function Creo() {
         <button onClick={onClick3}>-클릭3-</button>
         <p>
         {/* {count} */}
-        {/* {countArr.map((count, index) => (
-          <span key={index}>
-            {count}
-            {" / "}
-          </span>
-        ))} */}
 
         { goHome && <Home /> } 
         { goContact && <Contact /> }
