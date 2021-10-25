@@ -33,8 +33,10 @@ import './Components.scss';
 //     );
 //   }
 
+
+
 function Creo() {
-  const [goHome, setGohome] = useState( true )
+  const [goHome, setGohome] = useState( false )
   const [goContact, setGocontact] = useState( false )
   const [goTeam, setGoteam] = useState( false )
 
@@ -70,6 +72,7 @@ function Creo() {
         <button onClick={onClick3}>-클릭3-</button>
         <p>
         {/* {count} */}
+
         { goHome && <Home /> } 
         { goContact && <Contact /> }
         { goTeam && <Team /> }
