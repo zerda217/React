@@ -1,13 +1,9 @@
-# CREO Hompage test
+# REACT 사용한 코드 테스트
 
-1. 라이브러리
-   node-sass@5.0.0
-   sass
-   sass-loader
-   include-media
-   open-color
-   react-router-dom
-   redux
-   react-redux
-
-2. 구조
+***
+### [CREO TEST] / [CREO TEST2]
+회사 홈페이지 연습
+***
+### [TOREDUX] / [TOTEST]
+***
+### [WEATHER]
