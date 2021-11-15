@@ -17,6 +17,7 @@ const calendar = () => {
 
         const current = value.clone();
         const localeData = value.localeData();
+        console.log('data',value.localeData)
         const months = [];
         for (let i = 0; i < 12; i++) {
           current.month(i);
@@ -43,7 +44,7 @@ const calendar = () => {
         }
         return (
           <div style={{ padding: 8 }}>
-            <Typography.Title level={4}>Custom header</Typography.Title>
+            <Typography.Title level={4}>{year}년 {month+1}월</Typography.Title>
             <Row gutter={8}>
               <Col>
                 <Radio.Group size="small" onChange={e => onTypeChange(e.target.value)} value={type}>
@@ -85,7 +86,7 @@ const calendar = () => {
       }}
       onPanelChange={onPanelChange}
     />
-  </div>
+    </div>
   )
 }
 
