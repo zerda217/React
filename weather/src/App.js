@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import 'antd/dist/antd.css';
 import Index from './pages/index';
@@ -17,9 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
         <Index />
-      </Router>
     );
   }
 }

@@ -1,22 +1,25 @@
 import React from 'react'
 import {
+  BrowserRouter as Router,
   Route,
   Routes,
   Link,
 } from 'react-router-dom';
 import 'antd/dist/antd.css';
 import styled from 'styled-components';
-import { Layout, Menu, Badge, Input, Button } from 'antd';
+import { Layout, Menu, Input, Button } from 'antd';
 import { HomeOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, EyeInvisibleOutlined, EyeTwoTone  } from '@ant-design/icons';
-import Calendar from '../components/atoms/calendar';
+import AtomCalendar from '../components/atoms/calendar';
 import Progress from '../components/atoms/progress';
+import Countdown from '../components/atoms/countdown';
 
 const { Header, Content, Footer, Sider } = Layout;
 
 const index = () => {
   return (
+    <Router>
     <div>
-      <Layout>
+      <Layout style={{minHeight: '100vh'}}>
             <Sider
               breakpoint="lg"
               collapsedWidth="0"
@@ -35,25 +38,26 @@ const index = () => {
               </Link>
 
               {/* 서브 메뉴 */}
-              <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
+              <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}
+                style={{ padding: 0}}>
                 <Menu.Item key="1" icon={<HomeOutlined />}>
-                <Link to="/">
-                  INDEX
-                </Link>
+                  <Link to="/">
+                    INDEX
+                  </Link>
                 </Menu.Item>
                 <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-                <Link to="/calendar">
-                  CALENDAR
+                  <Link to="/calendar">
+                    CALENDAR
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="3" icon={<UploadOutlined />}>
-                <Link to="/">
-                  BLANK
+                  <Link to="/blank">
+                    BLANK
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="4" icon={<UserOutlined />}>
-                <Link to="/login">
-                  LOGIN
+                  <Link to="/login">
+                    LOGIN
                   </Link>
                 </Menu.Item>
               </Menu>
@@ -64,26 +68,27 @@ const index = () => {
             
             {/* 헤더 */}
             <Header className="site-layout-sub-header-background" 
-              style={{ padding: 0, display: 'flex', textAlign: 'center' }} >
-            <Badge status="warning" />
-            <Input placeholder="email" size="small" prefix={<UserOutlined />} 
-              style={{ width: "200px", height: "30px", margin: '15px'}} />
-            <Input.Password
-              placeholder="input password"
-              iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
-              style={{ width: "200px", height: "30px", margin: '15px'}}
-            />
-            <Button style={{ width: "70px", height: "30px", margin: '15px'}}>로그인</Button>
+              style={{ padding: 0, display: 'flex', textAlign: 'right' }} >
+            <div style={{ width: '100%'}}>
+              <Input placeholder="email" prefix={<UserOutlined />} 
+                style={{ width: '150px', height: '30px', margin: '15px'}} />
+              <Input.Password
+                placeholder="password"
+                iconRender={visible => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}
+                style={{ width: '150px', height: '30px', margin: '15px'}}
+              />
+              <Button style={{ width: '70px', height: '30px', margin: '15px'}}>로그인</Button>
+            </div>
             </Header>
 
             {/* 콘텐츠 */}
             <Content style={{ margin: '24px 16px 0' }}>
-              <Routes>
-                  <Route exact path="/" />
-                  <Route path="/calendar" component={(props) => <Calendar />} />
-              </Routes>
               <div className="site-layout-background" style={{ padding: 24, textAlign: 'center' , overflow: 'initial' }}>
-                <Progress />
+                <Routes>
+                  <Route path="/" element={<Countdown />} />
+                  <Route path="/calendar" element={<AtomCalendar />} />
+                  <Route path="/blank" element={<Progress />} />
+                </Routes>
               </div>
             </Content>
 
@@ -93,6 +98,7 @@ const index = () => {
           </Layout>
         </Layout>
     </div>
+    </Router>
   )
 }
 

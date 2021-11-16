@@ -5,7 +5,7 @@ function onPanelChange(value, mode) {
   console.log(value, mode);
 }
 
-const calendar = () => {
+const AtomCalendar = () => {
   return (
 <div className="site-calendar-customize-header-wrapper">
     <Calendar
@@ -90,4 +90,4 @@ const calendar = () => {
   )
 }
 
-export default calendar
+export default AtomCalendar
