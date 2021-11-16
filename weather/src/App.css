@@ -1,9 +1,6 @@
-/* html, body, #root, .wrapper-main {
-  display: flex;
-  width: 100vh;
-  height: 100vh;
-  overflow: hidden;
-} */
+html, body, #root, .wrapper-main {
+  width: auto;
+}
 .trigger {
   font-size: 18px;
   line-height: 64px;
@@ -24,6 +21,7 @@
 
 .site-layout-background {
   display: flex;
+  flex-direction: column;
   height: auto;
   background: #fff;
 }
