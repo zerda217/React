@@ -8,10 +8,11 @@ import {
 import 'antd/dist/antd.css';
 import styled from 'styled-components';
 import { Layout, Menu, Input, Button } from 'antd';
-import { HomeOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, EyeInvisibleOutlined, EyeTwoTone  } from '@ant-design/icons';
+import { HomeOutlined, UnorderedListOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, EyeInvisibleOutlined, EyeTwoTone  } from '@ant-design/icons';
 import AtomCalendar from '../components/atoms/calendar';
 import Progress from '../components/atoms/progress';
 import Countdown from '../components/atoms/countdown';
+import Tolist from '../components/atoms/Tolist';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -50,9 +51,9 @@ const index = () => {
                     CALENDAR
                   </Link>
                 </Menu.Item>
-                <Menu.Item key="3" icon={<UploadOutlined />}>
-                  <Link to="/blank">
-                    BLANK
+                <Menu.Item key="3" icon={<UnorderedListOutlined />}>
+                  <Link to="/list">
+                    LIST
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="4" icon={<UserOutlined />}>
@@ -87,7 +88,7 @@ const index = () => {
                 <Routes>
                   <Route path="/" element={<Countdown />} />
                   <Route path="/calendar" element={<AtomCalendar />} />
-                  <Route path="/blank" element={<Progress />} />
+                  <Route path="/list" element={<Tolist />} />
                 </Routes>
               </div>
             </Content>
