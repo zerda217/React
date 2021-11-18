@@ -6,13 +6,13 @@ import {
   Link,
 } from 'react-router-dom';
 import 'antd/dist/antd.css';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { Layout, Menu, Input, Button } from 'antd';
-import { HomeOutlined, UnorderedListOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, EyeInvisibleOutlined, EyeTwoTone  } from '@ant-design/icons';
+import { HomeOutlined, UnorderedListOutlined, UserOutlined, VideoCameraOutlined, EyeInvisibleOutlined, EyeTwoTone  } from '@ant-design/icons';
 import AtomCalendar from '../components/atoms/calendar';
-import Progress from '../components/atoms/progress';
+// import Progress from '../components/atoms/progress';
 import Countdown from '../components/atoms/countdown';
-import Tolist from '../components/atoms/Tolist';
+import Tolist from '../components/molecules/Tolist';
 
 const { Header, Content, Footer, Sider } = Layout;
 
