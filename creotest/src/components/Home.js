@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Button from './Button';
 import Title from './Title';
 import { useSelector } from 'react-redux';
@@ -46,4 +46,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default withRouter(Home);
