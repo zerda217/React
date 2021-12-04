@@ -10,6 +10,7 @@ import 'antd/dist/antd.css';
 import { Layout, Menu, Input, Button } from 'antd';
 import { HomeOutlined, UnorderedListOutlined, UserOutlined, VideoCameraOutlined, EyeInvisibleOutlined, EyeTwoTone  } from '@ant-design/icons';
 import AtomCalendar from '../components/atoms/calendar';
+import SelecBox from '../components/atoms/SelecBox';
 // import Progress from '../components/atoms/progress';
 import Countdown from '../components/atoms/countdown';
 import Tolist from '../components/molecules/Tolist';
@@ -90,6 +91,10 @@ const index = () => {
                   <Route path="/calendar" element={<AtomCalendar />} />
                   <Route path="/list" element={<Tolist />} />
                 </Routes>
+                <SelecBox />
+                <Input 
+                  style={{ width: 200 }}
+                  placeholder="추천인 아이디/코드"></Input>
               </div>
             </Content>
 
