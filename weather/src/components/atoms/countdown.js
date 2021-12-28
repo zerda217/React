@@ -1,4 +1,6 @@
+import confirm from 'antd/lib/modal/confirm';
 import React, {useState} from 'react'
+import { Children } from 'react';
 
 const MinutesToHours = () => {
   const [amount, setAmount] = useState(0);
@@ -88,11 +90,25 @@ function KmToMiles () {
   )
 }
 
+function Btn({text, onClick}) {
+  return <button 
+    onClick={onClick}
+    style={{
+    backgroundColor: '#da4',
+    color: 'white',
+    padding: '10px 20px',
+    border: 0,
+    borderRadius: 10,
+  }}>{text}</button>
+}
+
 const Countdown = () => {
-  const [index, setIndex] = useState("0")
+  const [text, setText] = useState("야옹");
+  const changeText = () => setText("멍멍");
+  const [index, setIndex] = useState("0");
   const onSelect = (e) => {
-    setIndex(e.target.value)
-  }
+    setIndex(e.target.value);
+  };
 
   return (
     <div>
@@ -106,6 +122,8 @@ const Countdown = () => {
       {index === "xx" ? "please select" : null}
       {index === "0" ? <MinutesToHours /> : null}
       {index === "1" ? <KmToMiles /> : null}
+      <Btn text={text} onClick={changeText} />
+      <Btn text="멍멍" />
     </div>
   )
 }

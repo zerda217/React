@@ -12,6 +12,7 @@ import { HomeOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, EyeInv
 import AtomCalendar from '../components/atoms/calendar';
 import Progress from '../components/atoms/progress';
 import Countdown from '../components/atoms/countdown';
+import Nomard from '../components/organisms/nomard';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -60,6 +61,11 @@ const index = () => {
                     LOGIN
                   </Link>
                 </Menu.Item>
+                <Menu.Item key="5" icon={<UserOutlined />}>
+                  <Link to="/nomard">
+                    NOMARD
+                  </Link>
+                </Menu.Item>
               </Menu>
             </Sider>
           
@@ -88,6 +94,7 @@ const index = () => {
                   <Route path="/" element={<Countdown />} />
                   <Route path="/calendar" element={<AtomCalendar />} />
                   <Route path="/blank" element={<Progress />} />
+                  <Route path="/nomard" element={<Nomard />} />
                 </Routes>
               </div>
             </Content>
