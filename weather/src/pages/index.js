@@ -6,13 +6,13 @@ import {
   Link,
 } from 'react-router-dom';
 import 'antd/dist/antd.css';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { Layout, Menu, Input, Button } from 'antd';
 import { HomeOutlined, UploadOutlined, UserOutlined, VideoCameraOutlined, EyeInvisibleOutlined, EyeTwoTone  } from '@ant-design/icons';
 import AtomCalendar from '../components/atoms/calendar';
 import Progress from '../components/atoms/progress';
 import Countdown from '../components/atoms/countdown';
-import Nomard from '../components/organisms/nomard';
+import NomardList from '../components/organisms/nomardList';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -94,7 +94,7 @@ const index = () => {
                   <Route path="/" element={<Countdown />} />
                   <Route path="/calendar" element={<AtomCalendar />} />
                   <Route path="/blank" element={<Progress />} />
-                  <Route path="/nomard" element={<Nomard />} />
+                  <Route path="/nomard" element={<NomardList />} />
                 </Routes>
               </div>
             </Content>
