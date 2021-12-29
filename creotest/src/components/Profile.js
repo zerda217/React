@@ -15,8 +15,9 @@ const data = {
       수십 종의 CCP 일지와 법적 서류들의 작성과 보관의 용이성까지 확보 할 수 있습니다. <br/>
       YESSUP (예썹)은 식품 안전 신뢰도 확보와 생산 효율성 제고를 동시에 실현합니다.</p>,
     subtitle: [
-      <Title name = "CCP 자동 모니터링"> <p>IoT 솔루션을 활용, 각종 센서들을 통해 CCP 자동 모니터링을 구축합니다.</p> </Title>,
-      <Title name = "기준 이탈 시 빠른 조치"/>]
+      <div> <Title>CCP 자동 모니터링 </Title> IoT 솔루션을 활용, 각종 센서들을 통해 CCP 자동 모니터링을 구축합니다.</div>,
+      <div> <Title>기준 이탈 시 빠른 조치 </Title> IoT 솔루션을 활용, 각종 센서들을 통해 CCP 자동 모니터링을 구축합니다.</div>
+    ]
   },
 
   kitchen: {
@@ -47,8 +48,10 @@ const data = {
 };
 
 const Profile = ({ match }) => {
+  console.log('22',match)
   // 파라미터를 받아올 땐 match 안에 들어있는 params 값을 참조합니다.
   const { title } = match.params;
+  console.log('title.match', match.params)
   const profile = data[title];
   // const { path, url } = useRouteMatch();
 
@@ -58,7 +61,8 @@ const Profile = ({ match }) => {
   return (
     <div>
       <h3>
-        {title}({profile.name})
+        {title}
+        <Title>{profile.name}</Title>
       </h3>
       <p>{profile.description}</p>
       <Table>
