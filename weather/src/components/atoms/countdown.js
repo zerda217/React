@@ -1,6 +1,4 @@
-import confirm from 'antd/lib/modal/confirm';
 import React, {useState} from 'react'
-import { Children } from 'react';
 
 const MinutesToHours = () => {
   const [amount, setAmount] = useState(0);

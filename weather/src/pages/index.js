@@ -11,10 +11,11 @@ import { Layout, Menu, Input, Button } from 'antd';
 import { HomeOutlined, UnorderedListOutlined, UserOutlined, VideoCameraOutlined, EyeInvisibleOutlined, EyeTwoTone  } from '@ant-design/icons';
 import AtomCalendar from '../components/atoms/calendar';
 import SelecBox from '../components/atoms/SelecBox';
-// import Progress from '../components/atoms/progress';
+import Progress from '../components/atoms/progress';
 import Countdown from '../components/atoms/countdown';
+import NomardList from '../components/organisms/nomardList';
 import Tolist from '../components/molecules/Tolist';
-import Nomard from '../components/organisms/nomard';
+// import Nomard from '../components/organisms/nomard';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -97,7 +98,7 @@ const index = () => {
                   <Route path="/calendar" element={<AtomCalendar />} />
                   <Route path="/list" element={<Tolist />} />
                   <Route path="/blank" element={<Progress />} />
-                  <Route path="/nomard" element={<Nomard />} />
+                  <Route path="/nomard" element={<NomardList />} />
                 </Routes>
                 <SelecBox />
                 <Input 
