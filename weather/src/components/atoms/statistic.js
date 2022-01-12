@@ -1,26 +1,8 @@
-import { number } from "prop-types";
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider, css } from "styled-components";
+import { darken, lighten } from 'polished';
 
 const Statistic = () => {
-
-  // const [selectNumber, setSelectNumber] = useState('');
-
-  // const onClickNumber = (e) => {
-  //   setSelectNumber(e.target.value)  
-  // }
-
-  // const [selectAnimal, setSelectAnimal] = useState('');
-
-  // const onClickAnimal = (e) => {
-  //   setSelectAnimal(e.target.value)
-  // }
-
-  // const [selectFood, setSelectFood] = useState('');
-
-  // const onClickFood = (e) => {
-  //   setSelectFood(e.target.value)
-  // }
 
   const [selectSet, setSelectSet] = useState([
     {
@@ -30,6 +12,41 @@ const Statistic = () => {
     }
   ])
   const {pickNumber, pickAnimal, pickFood} = selectSet[0];
+
+  const TestData = [
+    { Numbers : [
+      {
+        value: '1',
+      },
+      {
+        value: '2',
+      },
+      {
+        value: '3',
+      }
+    ]},
+   { Animals : [
+      {
+        value: '고양이',
+      },
+      {
+        value: '강아지',
+      },
+      {
+        value: '병아리',
+      }
+    ]},
+    { Foods : [
+      {
+        value: '커피',
+      },
+      {
+        value: '빵',
+      },
+      {
+        value: '귤',
+      }
+    ]}];
 
   const onClickSetNumber = (e) => {
     setSelectSet(
@@ -50,44 +67,135 @@ const Statistic = () => {
     )
   }
 
-  console.log(selectSet)
+  const onClick = (params) => {
+    console.log('클릭', params)
 
+      // setSelectSet(
+      //   selectSet.map(item => 
+      //     item.pickAnimal === params.target.value ? item : {...item, pickAnimal: params.target.value} )
+      // )
+  }
 
 return(
-  <div>
+  <ThemeProvider
+  theme={{
+    palette: {
+      blue: '#228be6',
+      gray: '#495057',
+      pink: '#f06595'
+    }
+  }}
+>
     <div>
-      {selectSet
-      &&
-        selectSet.map((item, index) => 
+      {selectSet && selectSet.map((item, index) => 
         <span key={index}>
           {item.pickNumber} / {item.pickAnimal} / {item.pickFood}
         </span>)}
     </div>
+      
+  <AppBlock>
 
-    <div onClick={onClickSetNumber}>
-    <StyledButton value='1'>1</StyledButton>
-    <StyledButton value='2'>2</StyledButton>
-    <StyledButton value='3'>3</StyledButton>
+    <ButtonGroup>
+        {TestData.map((data, index) => (
+          <div key={index}>
+            {index === 0 ?
+              <>{data.Numbers.map((x, index) => (
+                <StyledButton key={index}>{x.value}</StyledButton>
+              ))}</> : 
+              index === 1 ?
+              <>{data.Animals.map((x, index) => (
+                <StyledButton key={index}>{x.value}</StyledButton>
+              ))}</> : 
+              index === 2 ?
+              <>{data.Foods.map((x, index) => (
+                <StyledButton key={index}>{x.value}</StyledButton>
+              ))}</> : null
+            }
+          </div>
+        ))}
+
+      {/* {Numbers.map(number => (
+        <StyledButton key={number.value} onClick = { (e) => {onClick(number, e)} }>
+          {number.value}
+        </StyledButton>
+      ))} */}
+    </ButtonGroup>
     선택한 숫자 : {pickNumber}
-    </div>
 
-  <div onClick={onClickSetAnimal}>
-    <StyledButton value='고양이'>고양이</StyledButton>
-    <StyledButton value='강아지'>강아지</StyledButton>
-    <StyledButton value='병아리'>병아리</StyledButton>
-    선택한 동물 : {pickAnimal}
-  </div>
+    <ButtonGroup>
+      {/* {Animals.map(animal => (
+        <StyledButton key={animal.value} onClick = { (e) => {onClick(animal, e)} }>
+          {animal.value}
+        </StyledButton>
+      ))} */}
 
-  <div onClick={onClickSetFood}>
-    <StyledButton value='아포카토'>아포카토</StyledButton>
-    <StyledButton value='바게트빵'>바게트빵</StyledButton>
-    <StyledButton value='핫케이크'>핫케이크</StyledButton>
-    선택한 음식 : {pickFood}
-  </div>
+    </ButtonGroup>
+      선택한 동물 : {pickAnimal}
 
-  </div>
+    <ButtonGroup>
+      {/* {Foods.map(food => (
+          <StyledButton key={food.value} onClick = { (e) => {onClick(food, e)} }>
+            {food.value}
+          </StyledButton>
+      ))} */}
+    </ButtonGroup>
+      선택한 음식 : {pickFood}
+
+  </AppBlock>
+  </ThemeProvider>
 );
 }
+
+const AppBlock = styled.div`
+  width: 512px;
+  margin: 0 auto;
+  margin-top: 4rem;
+  border: 1px solid black;
+  padding: 1rem;
+`;
+
+const ButtonGroup = styled.div`
+  & + & {
+    margin-top: 1rem;
+  }
+`;
+
+const colorStyles = css`
+  ${({ theme, color }) => {
+    const selected = theme.palette[color];
+    return css`
+      background: ${selected};
+      &:hover {
+        background: ${lighten(0.1, selected)};
+      }
+      &:active {
+        background: ${darken(0.1, selected)};
+      }
+    `;
+  }}
+`;
+
+const sizes = {
+  large: {
+    height: '3rem',
+    fontSize: '1.25rem'
+  },
+  medium: {
+    height: '2.25rem',
+    fontSize: '1rem'
+  },
+  small: {
+    height: '1.75rem',
+    fontSize: '0.875rem'
+  }
+};
+
+const sizeStyles = css`
+  ${({ size }) => css`
+    height: ${sizes[size].height};
+    font-size: ${sizes[size].fontSize};
+  `}
+`;
 
 const StyledButton = styled.button`
   /* 공통 스타일 */
@@ -100,24 +208,24 @@ const StyledButton = styled.button`
   cursor: pointer;
   margin: 0.5rem;
   padding: 1rem;
+  width: 7rem;
 
   /* 크기 */
-  height: 2.25rem;
-  font-size: 1rem;
+  ${sizeStyles}
 
   /* 색상 */
-  background: #228be6;
-  &:hover {
-    background: #339af0;
-  }
-  &:active {
-    background: #1c7ed6;
-  }
+  ${colorStyles}
 
   /* 기타 */
   & + & {
     margin-left: 1rem;
   }
 `;
+
+StyledButton.defaultProps = {
+  color: 'blue',
+  size: 'medium'
+};
+
 
 export default Statistic
