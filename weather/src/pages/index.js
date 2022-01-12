@@ -10,7 +10,8 @@ import 'antd/dist/antd.css';
 import { Layout, Menu, Input, Button } from 'antd';
 import { HomeOutlined, UnorderedListOutlined, UserOutlined, VideoCameraOutlined, EyeInvisibleOutlined, EyeTwoTone  } from '@ant-design/icons';
 import AtomCalendar from '../components/atoms/calendar';
-import SelecBox from '../components/atoms/SelecBox';
+// import SelecBox from '../components/atoms/SelecBox';
+import Statistic from '../components/atoms/statistic';
 import Progress from '../components/atoms/progress';
 import Countdown from '../components/atoms/countdown';
 import NomardList from '../components/organisms/nomardList';
@@ -64,7 +65,12 @@ const index = () => {
                     LOGIN
                   </Link>
                 </Menu.Item>
-                <Menu.Item key="5" icon={<UserOutlined />}>
+                <Menu.Item key="5" icon={<UnorderedListOutlined />}>
+                  <Link to="/static">
+                    STATIC
+                  </Link>
+                </Menu.Item>
+                <Menu.Item key="6" icon={<UserOutlined />}>
                   <Link to="/nomard">
                     NOMARD
                   </Link>
@@ -97,13 +103,14 @@ const index = () => {
                   <Route path="/" element={<Countdown />} />
                   <Route path="/calendar" element={<AtomCalendar />} />
                   <Route path="/list" element={<Tolist />} />
-                  <Route path="/blank" element={<Progress />} />
+                  <Route path="/login" element={<Progress />} />
                   <Route path="/nomard" element={<NomardList />} />
+                  <Route path="/static" element={<Statistic />} />
                 </Routes>
-                <SelecBox />
+                {/* <SelecBox />
                 <Input 
                   style={{ width: 200 }}
-                  placeholder="추천인 아이디/코드"></Input>
+                  placeholder="추천인 아이디/코드"></Input> */}
               </div>
             </Content>
 
