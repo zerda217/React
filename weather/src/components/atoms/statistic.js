@@ -1,79 +1,77 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider, css } from "styled-components";
 import { darken, lighten } from 'polished';
+import { render } from "@testing-library/react";
 
 const Statistic = () => {
-
-  const [selectSet, setSelectSet] = useState([
-    {
-      pickNumber: '숫자',
-      pickAnimal: '동물',
-      pickFood: '음식',
-    }
-  ])
-  const {pickNumber, pickAnimal, pickFood} = selectSet[0];
 
   const TestData = [
     { Numbers : [
       {
+        category: 'number',
         value: '1',
       },
       {
+        category: 'number',
         value: '2',
       },
       {
+        category: 'number',
         value: '3',
       }
     ]},
    { Animals : [
       {
+        category: 'animal',
         value: '고양이',
       },
       {
+        category: 'animal',
         value: '강아지',
       },
       {
+        category: 'animal',
         value: '병아리',
       }
     ]},
     { Foods : [
       {
+        category: 'food',
         value: '커피',
       },
       {
+        category: 'food',
         value: '빵',
       },
       {
+        category: 'food',
         value: '귤',
       }
     ]}];
 
-  const onClickSetNumber = (e) => {
-    setSelectSet(
-      selectSet.map(item => 
-        item.pickNumber === e.target.value ? item : {...item, pickNumber: e.target.value} )
-    )
-  }
-  const onClickSetAnimal = (e) => {
-    setSelectSet(
-      selectSet.map(item => 
-        item.pickAnimal === e.target.value ? item : {...item, pickAnimal: e.target.value} )
-    )
-  }
-  const onClickSetFood = (e) => {
-    setSelectSet(
-      selectSet.map(item => 
-        item.pickFood === e.target.value ? item : {...item, pickFood: e.target.value} )
-    )
-  }
+  const [selectSet, setSelectSet] = useState(
+    {
+      number: '숫자',
+      animal: '동물',
+      food: '음식',
+    }
+  )
 
-  const onClick = (params) => {
-    console.log('클릭', params)
+  const onClick = props => {
+    console.log('클릭', props)
 
-      // setSelectSet(
-      //   selectSet.map(item => 
-      //     item.pickAnimal === params.target.value ? item : {...item, pickAnimal: params.target.value} )
+    setSelectSet(
+      
+      // selectSet.map(select =>
+      //   'number' === props.category 
+      //   ? {...select, number: props.value} 
+      //   : 'animal' === props.category 
+      //   ? {...select, animal: props.value}
+      //   : 'food' === props.category 
+      //   ? {...select, food: props.value}
+      //   : select
       // )
+    )
   }
 
 return(
@@ -87,72 +85,34 @@ return(
   }}
 >
     <div>
-      {selectSet && selectSet.map((item, index) => 
-        <span key={index}>
-          {item.pickNumber} / {item.pickAnimal} / {item.pickFood}
-        </span>)}
+      {selectSet && 
+          `${selectSet.number} / ${selectSet.animal} / ${selectSet.food}`
+        }
     </div>
       
-  <AppBlock>
-
     <ButtonGroup>
-        {TestData.map((data, index) => (
-          <div key={index}>
-            {index === 0 ?
-              <>{data.Numbers.map((x, index) => (
-                <StyledButton key={index}>{x.value}</StyledButton>
-              ))}</> : 
-              index === 1 ?
-              <>{data.Animals.map((x, index) => (
-                <StyledButton key={index}>{x.value}</StyledButton>
-              ))}</> : 
-              index === 2 ?
-              <>{data.Foods.map((x, index) => (
-                <StyledButton key={index}>{x.value}</StyledButton>
-              ))}</> : null
-            }
-          </div>
-        ))}
-
-      {/* {Numbers.map(number => (
-        <StyledButton key={number.value} onClick = { (e) => {onClick(number, e)} }>
-          {number.value}
-        </StyledButton>
-      ))} */}
+      {TestData.map((data, index) => (
+        <div key={index}>
+          {index === 0 ?
+            <>{data.Numbers.map((number, index) => (
+              <StyledButton key={index} onClick={(e) => {onClick(number, e)}}>{number.value}</StyledButton>
+            ))}</> 
+          : index === 1 ?
+            <>{data.Animals.map((animal, index) => (
+              <StyledButton key={index} onClick={(e) => {onClick(animal, e)}}>{animal.value}</StyledButton>
+            ))}</> 
+          : index === 2 ?
+            <>{data.Foods.map((food, index) => (
+              <StyledButton key={index} onClick={(e) => {onClick(food, e)}}>{food.value}</StyledButton>
+            ))}</> : null
+          }
+        </div>
+      ))}
     </ButtonGroup>
-    선택한 숫자 : {pickNumber}
 
-    <ButtonGroup>
-      {/* {Animals.map(animal => (
-        <StyledButton key={animal.value} onClick = { (e) => {onClick(animal, e)} }>
-          {animal.value}
-        </StyledButton>
-      ))} */}
-
-    </ButtonGroup>
-      선택한 동물 : {pickAnimal}
-
-    <ButtonGroup>
-      {/* {Foods.map(food => (
-          <StyledButton key={food.value} onClick = { (e) => {onClick(food, e)} }>
-            {food.value}
-          </StyledButton>
-      ))} */}
-    </ButtonGroup>
-      선택한 음식 : {pickFood}
-
-  </AppBlock>
   </ThemeProvider>
 );
 }
-
-const AppBlock = styled.div`
-  width: 512px;
-  margin: 0 auto;
-  margin-top: 4rem;
-  border: 1px solid black;
-  padding: 1rem;
-`;
 
 const ButtonGroup = styled.div`
   & + & {
