@@ -6,11 +6,11 @@ import {
   Link,
 } from 'react-router-dom';
 import 'antd/dist/antd.css';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { Layout, Menu, Input, Button } from 'antd';
 import { HomeOutlined, UnorderedListOutlined, UserOutlined, VideoCameraOutlined, EyeInvisibleOutlined, EyeTwoTone  } from '@ant-design/icons';
 import AtomCalendar from '../components/atoms/calendar';
-import SelecBox from '../components/atoms/SelecBox';
+// import SelecBox from '../components/atoms/SelecBox';
 import Statistic from '../components/atoms/statistic';
 import Progress from '../components/atoms/progress';
 import Countdown from '../components/atoms/countdown';
