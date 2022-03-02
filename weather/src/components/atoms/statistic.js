@@ -1,118 +1,135 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider, css } from "styled-components";
-import { darken, lighten } from 'polished';
-import { render } from "@testing-library/react";
+import { darken, lighten } from "polished";
+import { number } from "prop-types";
 
 const Statistic = () => {
-
   const TestData = [
-    { Numbers : [
-      {
-        category: 'number',
-        value: '1',
-      },
-      {
-        category: 'number',
-        value: '2',
-      },
-      {
-        category: 'number',
-        value: '3',
-      }
-    ]},
-   { Animals : [
-      {
-        category: 'animal',
-        value: '고양이',
-      },
-      {
-        category: 'animal',
-        value: '강아지',
-      },
-      {
-        category: 'animal',
-        value: '병아리',
-      }
-    ]},
-    { Foods : [
-      {
-        category: 'food',
-        value: '커피',
-      },
-      {
-        category: 'food',
-        value: '빵',
-      },
-      {
-        category: 'food',
-        value: '귤',
-      }
-    ]}];
-
-  const [selectSet, setSelectSet] = useState(
     {
-      number: '숫자',
-      animal: '동물',
-      food: '음식',
-    }
-  )
+      Numbers: [
+        {
+          category: "number",
+          value: "1",
+        },
+        {
+          category: "number",
+          value: "2",
+        },
+        {
+          category: "number",
+          value: "3",
+        },
+      ],
+    },
+    {
+      Animals: [
+        {
+          category: "animal",
+          value: "고양이",
+        },
+        {
+          category: "animal",
+          value: "강아지",
+        },
+        {
+          category: "animal",
+          value: "병아리",
+        },
+      ],
+    },
+    {
+      Foods: [
+        {
+          category: "food",
+          value: "커피",
+        },
+        {
+          category: "food",
+          value: "빵",
+        },
+        {
+          category: "food",
+          value: "귤",
+        },
+      ],
+    },
+  ];
 
-  const onClick = props => {
-    console.log('클릭', props)
+  const [selectSet, setSelectSet] = useState({
+    number: "숫자",
+    animal: "동물",
+    food: "음식",
+  });
 
-    setSelectSet(
-      
-      // selectSet.map(select =>
-      //   'number' === props.category 
-      //   ? {...select, number: props.value} 
-      //   : 'animal' === props.category 
-      //   ? {...select, animal: props.value}
-      //   : 'food' === props.category 
-      //   ? {...select, food: props.value}
-      //   : select
-      // )
-    )
-  }
+  const onClick = (props) => {
+    console.log("클릭", props.value);
 
-return(
-  <ThemeProvider
-  theme={{
-    palette: {
-      blue: '#228be6',
-      gray: '#495057',
-      pink: '#f06595'
-    }
-  }}
->
-    <div>
-      {selectSet && 
-          `${selectSet.number} / ${selectSet.animal} / ${selectSet.food}`
-        }
-    </div>
-      
-    <ButtonGroup>
-      {TestData.map((data, index) => (
-        <div key={index}>
-          {index === 0 ?
-            <>{data.Numbers.map((number, index) => (
-              <StyledButton key={index} onClick={(e) => {onClick(number, e)}}>{number.value}</StyledButton>
-            ))}</> 
-          : index === 1 ?
-            <>{data.Animals.map((animal, index) => (
-              <StyledButton key={index} onClick={(e) => {onClick(animal, e)}}>{animal.value}</StyledButton>
-            ))}</> 
-          : index === 2 ?
-            <>{data.Foods.map((food, index) => (
-              <StyledButton key={index} onClick={(e) => {onClick(food, e)}}>{food.value}</StyledButton>
-            ))}</> : null
-          }
-        </div>
-      ))}
-    </ButtonGroup>
+    setSelectSet((prevState) => ({
+      number: props.value,
+      ...prevState,
+    }));
+  };
 
-  </ThemeProvider>
-);
-}
+  return (
+    <ThemeProvider
+      theme={{
+        palette: {
+          blue: "#228be6",
+          gray: "#495057",
+          pink: "#f06595",
+        },
+      }}>
+      <div>
+        {selectSet &&
+          `${selectSet.number} / ${selectSet.animal} / ${selectSet.food}`}
+      </div>
+
+      <ButtonGroup>
+        {TestData.map((data, index) => (
+          <div key={index}>
+            {index === 0 ? (
+              <>
+                {data.Numbers.map((number, index) => (
+                  <StyledButton
+                    key={index}
+                    onClick={(e) => {
+                      onClick(number, e);
+                    }}>
+                    {number.value}
+                  </StyledButton>
+                ))}
+              </>
+            ) : index === 1 ? (
+              <>
+                {data.Animals.map((animal, index) => (
+                  <StyledButton
+                    key={index}
+                    onClick={(e) => {
+                      onClick(animal, e);
+                    }}>
+                    {animal.value}
+                  </StyledButton>
+                ))}
+              </>
+            ) : index === 2 ? (
+              <>
+                {data.Foods.map((food, index) => (
+                  <StyledButton
+                    key={index}
+                    onClick={(e) => {
+                      onClick(food, e);
+                    }}>
+                    {food.value}
+                  </StyledButton>
+                ))}
+              </>
+            ) : null}
+          </div>
+        ))}
+      </ButtonGroup>
+    </ThemeProvider>
+  );
+};
 
 const ButtonGroup = styled.div`
   & + & {
@@ -137,17 +154,17 @@ const colorStyles = css`
 
 const sizes = {
   large: {
-    height: '3rem',
-    fontSize: '1.25rem'
+    height: "3rem",
+    fontSize: "1.25rem",
   },
   medium: {
-    height: '2.25rem',
-    fontSize: '1rem'
+    height: "2.25rem",
+    fontSize: "1rem",
   },
   small: {
-    height: '1.75rem',
-    fontSize: '0.875rem'
-  }
+    height: "1.75rem",
+    fontSize: "0.875rem",
+  },
 };
 
 const sizeStyles = css`
@@ -183,9 +200,8 @@ const StyledButton = styled.button`
 `;
 
 StyledButton.defaultProps = {
-  color: 'blue',
-  size: 'medium'
+  color: "blue",
+  size: "medium",
 };
 
-
-export default Statistic
+export default Statistic;
