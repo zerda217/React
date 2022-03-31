@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  BrowserRouter as Router,
   Route,
   Routes,
   Link,
@@ -22,7 +21,6 @@ const { Header, Content, Footer, Sider } = Layout;
 
 const index = () => {
   return (
-    <Router>
     <div>
       <Layout style={{minHeight: '100vh'}}>
             <Sider
@@ -120,7 +118,6 @@ const index = () => {
           </Layout>
         </Layout>
     </div>
-    </Router>
   )
 }
 
