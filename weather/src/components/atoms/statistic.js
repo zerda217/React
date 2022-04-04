@@ -1,135 +1,82 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider, css } from "styled-components";
-import { darken, lighten } from "polished";
-import { number } from "prop-types";
+import { darken, lighten } from 'polished';
 
 const Statistic = () => {
-  const TestData = [
-    {
-      Numbers: [
-        {
-          category: "number",
-          value: "1",
-        },
-        {
-          category: "number",
-          value: "2",
-        },
-        {
-          category: "number",
-          value: "3",
-        },
-      ],
-    },
-    {
-      Animals: [
-        {
-          category: "animal",
-          value: "고양이",
-        },
-        {
-          category: "animal",
-          value: "강아지",
-        },
-        {
-          category: "animal",
-          value: "병아리",
-        },
-      ],
-    },
-    {
-      Foods: [
-        {
-          category: "food",
-          value: "커피",
-        },
-        {
-          category: "food",
-          value: "빵",
-        },
-        {
-          category: "food",
-          value: "귤",
-        },
-      ],
-    },
-  ];
 
-  const [selectSet, setSelectSet] = useState({
-    number: "숫자",
-    animal: "동물",
-    food: "음식",
-  });
+  const TestData = {
+    Numbers : [1,2,3],
+    Animals : ['고양이','강아지','병아리'],
+    Foods : ['커피','빵','귤']
+};
+
+  const {Numbers, Animals, Foods} = TestData;
+
+  const [selectSet, setSelectSet] = useState({ 
+    number: '숫자', animal: '동물', food: '음식' 
+  })
 
   const onClick = (props) => {
-    console.log("클릭", props.value);
+    const text = props.target.textContent
+    console.log('클릭', text)
 
-    setSelectSet((prevState) => ({
-      number: props.value,
-      ...prevState,
-    }));
-  };
+    function filter() {
+      if (TestData.Numbers.hasOwnProperty(text) === true) {return
+        setSelectSet({
+        number: `${text}`, ...setSelectSet, 
+        })} else if (TestData.Animals.hasOwnProperty(text) === true) {return
+          setSelectSet({
+          ...setSelectSet, animal: `${text}`,
+          })} else if (TestData.Foods.hasOwnProperty(text) === true) {return
+            setSelectSet({
+            ...setSelectSet, food: `${text}`,
+            })} else {return
+            setSelectSet({ ...setSelectSet })}
+    }
+    
+    setSelectSet(
+      {filter}
+    )
+    }
 
-  return (
-    <ThemeProvider
-      theme={{
-        palette: {
-          blue: "#228be6",
-          gray: "#495057",
-          pink: "#f06595",
-        },
-      }}>
-      <div>
-        {selectSet &&
-          `${selectSet.number} / ${selectSet.animal} / ${selectSet.food}`}
-      </div>
+return(
+  <ThemeProvider
+  theme={{
+    palette: {
+      blue: '#228be6',
+      gray: '#495057',
+      pink: '#f06595'
+    }
+  }}
+>
+    <div>
+      {selectSet && 
+          `${selectSet.number} / ${selectSet.animal} / ${selectSet.food}`
+        }
+    </div>
+      
+    <ButtonGroup>
+      {Numbers.map((number, index) => (
+        <StyledButton color='pink' key={index} onClick={(number) => {onClick(number)}}>
+          {number}
+        </StyledButton>
+      ))}
+      {Animals.map((animal, index) => (
+        <StyledButton color='gray' key={index} onClick={(animal) => {onClick(animal)}}>
+          {animal}
+        </StyledButton>
+      ))}
+      {Foods.map((food, index) => (
+        <StyledButton key={index} onClick={(food) => {onClick(food)}}>
+          {food}
+        </StyledButton>
+      ))}
+    </ButtonGroup>
 
-      <ButtonGroup>
-        {TestData.map((data, index) => (
-          <div key={index}>
-            {index === 0 ? (
-              <>
-                {data.Numbers.map((number, index) => (
-                  <StyledButton
-                    key={index}
-                    onClick={(e) => {
-                      onClick(number, e);
-                    }}>
-                    {number.value}
-                  </StyledButton>
-                ))}
-              </>
-            ) : index === 1 ? (
-              <>
-                {data.Animals.map((animal, index) => (
-                  <StyledButton
-                    key={index}
-                    onClick={(e) => {
-                      onClick(animal, e);
-                    }}>
-                    {animal.value}
-                  </StyledButton>
-                ))}
-              </>
-            ) : index === 2 ? (
-              <>
-                {data.Foods.map((food, index) => (
-                  <StyledButton
-                    key={index}
-                    onClick={(e) => {
-                      onClick(food, e);
-                    }}>
-                    {food.value}
-                  </StyledButton>
-                ))}
-              </>
-            ) : null}
-          </div>
-        ))}
-      </ButtonGroup>
-    </ThemeProvider>
-  );
-};
+  </ThemeProvider>
+);
+}
+
 
 const ButtonGroup = styled.div`
   & + & {
@@ -186,6 +133,8 @@ const StyledButton = styled.button`
   margin: 0.5rem;
   padding: 1rem;
   width: 7rem;
+  align-items: center;
+  justify-content: center;
 
   /* 크기 */
   ${sizeStyles}

@@ -1,6 +1,5 @@
 import React, {useRef, useState, useMemo, useCallback} from 'react'
 import {
-  BrowserRouter as Router,
   Route,
   Routes,
   Link,
@@ -102,7 +101,6 @@ const Index = () => {
   const count = useMemo(() => countActiveUsers(users), [users] );
 
   return (
-    <Router>
     <div>
       <Layout style={{minHeight: '100vh'}}>
             <Sider
@@ -208,7 +206,6 @@ const Index = () => {
           </Layout>
         </Layout>
     </div>
-    </Router>
   )
 }
 

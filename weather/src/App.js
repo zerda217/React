@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
-import Index from './pages/index';
+import Index from './pages';
 
 const App = () => {
 
