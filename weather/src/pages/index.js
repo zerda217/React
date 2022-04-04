@@ -11,6 +11,7 @@ import { Layout, Menu, Input, Button } from 'antd';
 import { HomeOutlined, UnorderedListOutlined, UserOutlined, VideoCameraOutlined, EyeInvisibleOutlined, EyeTwoTone  } from '@ant-design/icons';
 import AtomCalendar from '../components/atoms/calendar';
 // import SelecBox from '../components/atoms/SelecBox';
+import InputSample from '../components/atoms/InputSample';
 import Statistic from '../components/atoms/statistic';
 import Progress from '../components/atoms/progress';
 import Countdown from '../components/atoms/countdown';
@@ -112,6 +113,7 @@ const index = () => {
                   style={{ width: 200 }}
                   placeholder="추천인 아이디/코드"></Input> */}
               </div>
+              <InputSample />
             </Content>
 
             <Footer style={{ textAlign: 'center' }}>
