@@ -1,24 +1,18 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import 'antd/dist/antd.css';
 import Index from './pages/index';
 
-class App extends Component {
-  state = {
-    collapsed: false,
-  };
+const App = () => {
 
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    });
-  };
+  const [collapsed, setCollapsed] = useState(false);
+  const toggle = () => {
+    setCollapsed(!collapsed)
+  }
 
-  render() {
     return (
         <Index />
     );
-  }
 }
 
 export default App;
