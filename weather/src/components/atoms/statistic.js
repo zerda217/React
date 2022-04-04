@@ -77,6 +77,7 @@ return(
 );
 }
 
+
 const ButtonGroup = styled.div`
   & + & {
     margin-top: 1rem;
@@ -100,17 +101,17 @@ const colorStyles = css`
 
 const sizes = {
   large: {
-    height: '3rem',
-    fontSize: '1.25rem'
+    height: "3rem",
+    fontSize: "1.25rem",
   },
   medium: {
-    height: '2.25rem',
-    fontSize: '1rem'
+    height: "2.25rem",
+    fontSize: "1rem",
   },
   small: {
-    height: '1.75rem',
-    fontSize: '0.875rem'
-  }
+    height: "1.75rem",
+    fontSize: "0.875rem",
+  },
 };
 
 const sizeStyles = css`
@@ -148,9 +149,8 @@ const StyledButton = styled.button`
 `;
 
 StyledButton.defaultProps = {
-  color: 'blue',
-  size: 'medium'
+  color: "blue",
+  size: "medium",
 };
 
-
-export default Statistic
+export default Statistic;
