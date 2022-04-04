@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef, useState, useMemo, useCallback} from 'react'
 import {
   BrowserRouter as Router,
   Route,
@@ -11,7 +11,8 @@ import { Layout, Menu, Input, Button } from 'antd';
 import { HomeOutlined, UnorderedListOutlined, UserOutlined, VideoCameraOutlined, EyeInvisibleOutlined, EyeTwoTone  } from '@ant-design/icons';
 import AtomCalendar from '../components/atoms/calendar';
 // import SelecBox from '../components/atoms/SelecBox';
-import InputSample from '../components/atoms/InputSample';
+import CreateUser from '../components/atoms/CreateUser';
+import UserList from '../components/atoms/UserList';
 import Statistic from '../components/atoms/statistic';
 import Progress from '../components/atoms/progress';
 import Countdown from '../components/atoms/countdown';
@@ -21,7 +22,85 @@ import Tolist from '../components/molecules/Tolist';
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const index = () => {
+function countActiveUsers(users) {
+  console.log('활성 사용자 수를 세는중...');
+  return users.filter(user => user.active).length;
+}
+
+const Index = () => {
+  const [inputs, setInputs] = useState({
+    username: '',
+    email: ''
+  });
+  const { username, email } = inputs;
+
+  const onChange = e => {
+    const { name, value } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value
+    });
+  };
+
+  const [users, setUsers] = useState([
+    {
+      id: 1,
+      username: 'velopert',
+      email: 'public.velopert@gmail.com',
+      active: true
+    },
+    {
+      id: 2,
+      username: 'tester',
+      email: 'tester@example.com',
+      active: false
+    },
+    {
+      id: 3,
+      username: 'liz',
+      email: 'liz@example.com',
+      active: false
+    }
+  ]);
+
+  const nextId = useRef(4);
+
+  const onCreate = useCallback(() => {
+    const user = {
+      id: nextId.current,
+      username,
+      email
+    };
+    setUsers(users.concat(user));
+
+    setInputs({
+      username: '',
+      email: ''
+    });
+    nextId.current += 1;
+  }, [users, username, email]);
+
+  const onRemove = useCallback(
+    id => {
+      // user.id 가 파라미터로 일치하지 않는 원소만 추출해서 새로운 배열을 만듬
+      // = user.id 가 id 인 것을 제거함
+      setUsers(users.filter(user => user.id !== id));
+    },
+    [users]
+  );
+  const onToggle = useCallback(
+    id => {
+      setUsers(
+        users.map(user =>
+          user.id === id ? { ...user, active: !user.active } : user
+        )
+      );
+    },
+    [users]
+  );
+
+  const count = useMemo(() => countActiveUsers(users), [users] );
+
   return (
     <Router>
     <div>
@@ -113,7 +192,14 @@ const index = () => {
                   style={{ width: 200 }}
                   placeholder="추천인 아이디/코드"></Input> */}
               </div>
-              <InputSample />
+              <CreateUser
+                username={username}
+                email={email}
+                onChange={onChange}
+                onCreate={onCreate}
+              />
+              <UserList users={users} onRemove={onRemove} onToggle={onToggle} />
+              <div>활성사용자 수 : {count}</div>
             </Content>
 
             <Footer style={{ textAlign: 'center' }}>
@@ -126,4 +212,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
