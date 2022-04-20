@@ -53,6 +53,7 @@ const Velopert = () => {
       email
     };
     setUsers(users => users.concat(user));
+    //setUsers([...users, user]);
 
     setInputs({
       username: '',
