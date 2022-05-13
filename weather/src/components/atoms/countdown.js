@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import axios from 'axios'
 
 const MinutesToHours = () => {
   const [amount, setAmount] = useState(0);
@@ -88,26 +89,66 @@ function KmToMiles () {
   )
 }
 
-function Btn({text, onClick}) {
-  return <button 
-    onClick={onClick}
-    style={{
-    backgroundColor: '#da4',
-    color: 'white',
-    padding: '10px 20px',
-    border: 0,
-    borderRadius: 10,
-  }}>{text}</button>
-}
-
-const Countdown = () => {
-  const [text, setText] = useState("야옹");
-  const changeText = () => setText("멍멍");
+  const Countdown = () => {
   const [index, setIndex] = useState("0");
   const onSelect = (e) => {
     setIndex(e.target.value);
   };
 
+  const global = "https://test.creokorea.com:5001/v1"
+
+const [user, setUser] = useState([{
+  userId : "creotest",
+  password : "1qaz"
+}])
+
+const login = (e) => {
+  axios({
+    method:'post',
+    url: `${global}/users/signin`,
+    data:{
+      userId : `${user[0].userId}`,
+      password : `${user[0].password}`
+    }
+  })
+    .then(function (response) {
+      console.log('성공', e)
+    })
+    .catch(function(error) {
+      console.log("실패");
+    })
+}
+
+const check = (user) => {
+  const userId=user[0].userId
+  // console.log(user[0].userId)
+  axios({
+    method:'get',
+    url: `${global}/users/check/${userId}`,
+  })
+    .then(function (response) {
+      console.log('성공', userId)
+    })
+    .catch(function(error) {
+      console.log("실패");
+    })
+}
+
+const one = (user) => {
+  const userId=user[0].userId
+  console.log(user[0].userId)
+  axios({
+    method:'get',
+    url: `${global}/users/one/${userId}`,
+  })
+    .then(function (response) {
+      console.log('조회', response)
+    })
+    .catch(function(error) {
+      console.log("실패");
+    })
+}
+  
   return (
     <div>
       <h1>변환기</h1>
@@ -120,8 +161,13 @@ const Countdown = () => {
       {index === "xx" ? "please select" : null}
       {index === "0" ? <MinutesToHours /> : null}
       {index === "1" ? <KmToMiles /> : null}
-      <Btn text={text} onClick={changeText} />
-      <Btn text="멍멍" />
+      <hr />
+
+      <input value='creotest'>{user.userId}</input>
+      <input value='1qaz'>{user.password}</input>
+      <button onClick={() => login(user)}>로그인</button>
+      <button onClick={() => check(user)}>유효성</button>
+      <button onClick={() => one(user)}>조회</button>
     </div>
   )
 }
