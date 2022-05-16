@@ -95,24 +95,31 @@ function KmToMiles () {
     setIndex(e.target.value);
   };
 
-  const global = "https://test.creokorea.com:5001/v1"
-
-const [user, setUser] = useState([{
+const user = ({
   userId : "creotest",
-  password : "1qaz"
-}])
+  password : "1qaz",
+  id: "2358700612",
+  authenticated: true,
+})
 
 const login = (e) => {
-  axios({
-    method:'post',
-    url: `${global}/users/signin`,
-    data:{
-      userId : `${user[0].userId}`,
-      password : `${user[0].password}`
-    }
+  axios.post(`https://test.creokorea.com:5001/v1/users/signin`, {
+      userId : `${user.userId}`,
+      password : `${user.password}`
   })
     .then(function (response) {
       console.log('성공', e)
+      window.sessionStorage.setItem("user", JSON.stringify(user));
+    })
+    .catch(function(error) {
+      console.log("실패");
+    })
+}
+
+const session = () => {
+  axios.get(`https://test.creokorea.com:5001/v1/users/checksession`)
+    .then(function (response) {
+      console.log('성공', response)
     })
     .catch(function(error) {
       console.log("실패");
@@ -120,38 +127,89 @@ const login = (e) => {
 }
 
 const check = (user) => {
-  const userId=user[0].userId
-  // console.log(user[0].userId)
-  axios({
-    method:'get',
-    url: `${global}/users/check/${userId}`,
-  })
+  const userId = user.userId
+  axios.get(`https://test.creokorea.com:5001/v1/users/check/${userId}`)
     .then(function (response) {
       console.log('성공', userId)
+    })
+    .catch(function(error) {
+      console.log("실패", userId);
+    })
+}
+
+const one = (user) => {
+  const userId = user.userId
+  console.log(userId)
+  axios.get(`https://test.creokorea.com:5001/v1/users/one/${userId}`)
+    .then(function (response) {
+      console.log('조회', response)
+    })
+    .catch(function(error) {
+      console.log("실패", userId);
+    })
+}
+
+const all = () => {
+  // axios({
+  //   method:'get',
+  //   url: `https://test.creokorea.com:5001/v1/users/all`,
+  // })
+  axios.get("https://test.creokorea.com:5001/v1/users/all")
+    .then(function (response) {
+      console.log('all유저', response)
     })
     .catch(function(error) {
       console.log("실패");
     })
 }
 
-const one = (user) => {
-  const userId=user[0].userId
-  console.log(user[0].userId)
-  axios({
-    method:'get',
-    url: `${global}/users/one/${userId}`,
-  })
+const reports = (user) => {
+  const id = user.id
+  console.log(id)
+  axios.get(`https://test.creokorea.com:5001/v1/reports/${id}`)
     .then(function (response) {
-      console.log('조회', response)
+      console.log('선행기준', response)
     })
     .catch(function(error) {
-      console.log("실패");
+      console.log("실패", id);
+    })
+}
+
+const createReports = (user) => {
+  const id = user.id
+  console.log(id)
+  axios.post(`https://test.creokorea.com:5001/v1/reports/create/${id}`, {        
+              "title":"하나",
+              "creatorName":"하나테스터",
+              "questions": [
+                {
+                  "question":"청결 유지가 잘되어있는가?",
+                  "type":"boolean"
+                }
+              ]
+})
+    .then(function (response) {
+      console.log('생성 성공', response)
+    })
+    .catch(function(error) {
+      console.log("실패", id);
+    })
+}
+
+const files = (user) => {
+  const id = user.id
+  axios.get(`https://test.creokorea.com:5001/v1/files/many/${id}`)
+    .then(function (response) {
+      console.log('파일', response)
+    })
+    .catch(function(error) {
+      console.log("실패", id);
     })
 }
   
   return (
     <div>
-      <h1>변환기</h1>
+      {/* <h1>변환기</h1>
       <select value={index} onChange={onSelect}>
         <option value="xx">Select your units</option>
         <option value="0">Minutes & Hours</option>
@@ -160,14 +218,21 @@ const one = (user) => {
       <hr />
       {index === "xx" ? "please select" : null}
       {index === "0" ? <MinutesToHours /> : null}
-      {index === "1" ? <KmToMiles /> : null}
+      {index === "1" ? <KmToMiles /> : null} */}
       <hr />
 
-      <input value='creotest'>{user.userId}</input>
-      <input value='1qaz'>{user.password}</input>
+      <input name="userId" value={user.userId} />
+      <input name="password" value={user.password} />
+      <hr />
+
       <button onClick={() => login(user)}>로그인</button>
+      <button onClick={() => session()}>세션</button>
       <button onClick={() => check(user)}>유효성</button>
       <button onClick={() => one(user)}>조회</button>
+      <button onClick={() => all()}>모든유저</button>
+      <button onClick={() => reports(user)}>레포트조회</button>
+      <button onClick={() => createReports(user)}>레포트생성</button>
+      <button onClick={() => files(user)}>파일조회</button>
     </div>
   )
 }
