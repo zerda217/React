@@ -102,6 +102,8 @@ const user = ({
   authenticated: true,
 })
 
+// 로그인 인증 문제로 api 호출이 불가능
+
 const login = (e) => {
   axios.post(`https://test.creokorea.com:5001/v1/users/signin`, {
       userId : `${user.userId}`,
