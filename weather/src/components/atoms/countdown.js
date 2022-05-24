@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 
+import Login from '../organisms/login'
+
 const MinutesToHours = () => {
   const [amount, setAmount] = useState(0);
   const [inverted, setInverted] = useState(false);
@@ -235,6 +237,7 @@ const files = (user) => {
       <button onClick={() => reports(user)}>레포트조회</button>
       <button onClick={() => createReports(user)}>레포트생성</button>
       <button onClick={() => files(user)}>파일조회</button>
+      <Login />
     </div>
   )
 }
